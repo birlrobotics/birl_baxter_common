@@ -1,0 +1,6 @@
+<package>
+  <description brief="box_female">box_female</description>
+  <depend package="gazebo" />
+  <author>me</author>
+  <license>BSD</license>
+</package>

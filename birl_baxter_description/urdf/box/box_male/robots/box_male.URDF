@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<robot
+  name="box_male">
+  <link
+    name="box_male">
+    <inertial>
+      <origin
+        xyz="-5.2042E-18 -2.0817E-17 0.0051878"
+        rpy="0 0 0" />
+      <mass
+        value="0.013701" />
+      <inertia
+        ixx="8.8759E-06"
+        ixy="5.7083E-21"
+        ixz="-1.8181E-22"
+        iyy="3.9113E-06"
+        iyz="-4.3757E-22"
+        izz="1.205E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://birl_baxter_description/urdf/box/box_male/meshes/male_box.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.5 0.2 0.1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://birl_baxter_description/urdf/box/box_male/meshes/male_box.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="male_box_joint" type="fixed">
+      <origin rpy="0 0 0" xyz="0.6 0 -0.13"/>
+      <parent link="base" />
+      <child link="box_male"/>    
+  </joint>
+   <gazebo reference="box_male">
+    <selfCollide>true</selfCollide>
+          <mu1>1000</mu1>
+      <mu2>1000</mu2>
+      <fdir1>0.0 0.0 1.0</fdir1>
+      <kp>1e5</kp>
+      <kd>1.0</kd>
+  </gazebo>
+  
+</robot>

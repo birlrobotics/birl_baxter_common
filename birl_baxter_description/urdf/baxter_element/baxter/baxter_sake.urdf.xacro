@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+<robot name="baxter" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:arg name="gazebo" default="true"/>
+  <xacro:arg name="pedestal" default="true"/>
+  <!-- Baxter with ft Base URDF -->
+  <xacro:include filename="$(find birl_baxter_description)/urdf/baxter_element/baxter_base/baxter_base_ft.urdf.xacro">
+    <xacro:arg name="gazebo" value="${gazebo}"/>
+  </xacro:include>
+
+  <!-- Baxter Pedestal -->
+  <xacro:if value="$(arg pedestal)">
+    <xacro:include filename="$(find baxter_description)/urdf/pedestal/pedestal.xacro">
+      <xacro:arg name="gazebo" value="${gazebo}"/>
+    </xacro:include>
+  </xacro:if>
+
+  <!-- Left End Effector -->
+  <xacro:include filename="$(find rethink_ee_description)/urdf/sake_gripper/ezgripper_dual.urdf.xacro">
+    <xacro:arg name="gazebo" value="${gazebo}"/>
+  </xacro:include>
+  <xacro:property name="ezgripper_offset_x" value="0"/>
+  <xacro:property name="ezgripper_offset_y" value="0"/>
+  <xacro:property name="ezgripper_offset_z" value="0"/>
+
+  <xacro:ezgripper_dual prefix="left" parent_link="left_hand">
+    <origin xyz="${ezgripper_offset_x} ${ezgripper_offset_y} ${ezgripper_offset_z}" rpy="0 0 0"/>
+  </xacro:ezgripper_dual>
+  
+  <xacro:include filename="$(find baxter_description)/urdf/left_end_effector.urdf.xacro" />
+
+  <!-- Right End Effector -->
+  <xacro:include filename="$(find baxter_description)/urdf/right_end_effector.urdf.xacro" />
+
+<!-- Ft sensor plugin. warning:the reference joint which is defined as fixed  can not be selected. So in this case left_w2 is a revolute type in urdf!  -->  
+  <gazebo reference="left_w2">
+    <provideFeedback>true</provideFeedback>
+  </gazebo>
+
+
+  <gazebo>
+    <plugin name="ft_sensor" filename="libgazebo_ros_ft_sensor.so">
+      <updateRate>10.0</updateRate>
+      <topicName>ft_sensor_topic</topicName>
+      <jointName>left_w2</jointName>
+    </plugin>
+  </gazebo>
+
+
+</robot>

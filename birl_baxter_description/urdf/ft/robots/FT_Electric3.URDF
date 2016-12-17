@@ -1,0 +1,155 @@
+<?xml version="1.0" ?>
+<robot
+  name="FT_Electric3">
+  <link
+    name="FT_bottom_plate">
+    <inertial>
+      <origin
+        xyz="0.034783 -1.3323E-15 0.0055211"
+        rpy="0 0 0" />
+      <mass
+        value="0.051726" />
+      <inertia
+        ixx="2.5588E-05"
+        ixy="2.7505E-21"
+        ixz="2.4673E-08"
+        iyy="2.3459E-05"
+        iyz="4.1597E-22"
+        izz="4.7997E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://baxter_description/urdf/FT_Electric3/meshes/FT_bottom_plate.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://baxter_description/urdf/FT_Electric3/meshes/FT_bottom_plate.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="FT">
+    <inertial>
+      <origin
+        xyz="0.003889 0.0057216 0.014109"
+        rpy="0 0 0" />
+      <mass
+        value="1.4264" />
+      <inertia
+        ixx="0.0010241"
+        ixy="0.00016944"
+        ixz="2.4095E-05"
+        iyy="0.00071846"
+        iyz="5.2318E-05"
+        izz="0.0014993" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://baxter_description/urdf/FT_Electric3/meshes/FT.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.77647 0.75686 0.73725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://baxter_description/urdf/FT_Electric3/meshes/FT.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FT_Bottom_Joint"
+    type="fixed">
+    <origin
+      xyz="0.041625 -0.00085087 0.040469"
+      rpy="-3.1416 6.2028E-17 1.5708" />
+    <parent
+      link="FT_bottom_plate" />
+    <child
+      link="FT" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="FT_Top_Plate">
+    <inertial>
+      <origin
+        xyz="-0.0067444 -3.2055E-10 0.0054943"
+        rpy="0 0 0" />
+      <mass
+        value="0.053196" />
+      <inertia
+        ixx="2.7087E-05"
+        ixy="5.8629E-13"
+        ixz="-2.2091E-08"
+        iyy="2.5333E-05"
+        iyz="4.732E-16"
+        izz="5.1339E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://baxter_description/urdf/FT_Electric3/meshes/FT_Top_Plate.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://baxter_description/urdf/FT_Electric3/meshes/FT_Top_Plate.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FT_Top_Joint"
+    type="revolute">
+    <origin
+      xyz="0.00085087 -0.00087515 -0.0030305"
+      rpy="3.1416 5.017E-16 1.5708" />
+    <parent
+      link="FT" />
+    <child
+      link="FT_Top_Plate" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>

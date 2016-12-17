@@ -1,0 +1,79 @@
+<?xml version="1.0" ?>
+<robot name="baxter" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:arg name="gazebo" default="false"/>
+  <xacro:arg name="pedestal" default="true"/>
+  <!-- TODO: have an arg for pa_demo that sets correct eef's/table/xtion -->
+  <xacro:arg name="table" default="true"/>
+  <xacro:arg name="asus_xtion" default="true"/>
+  <xacro:arg name="right_camera_frame" default="true"/>
+  <xacro:arg name="left_camera_frame" default="true"/>
+  
+  <xacro:arg name="l_finger"       default="pa_finger"/>
+  <xacro:arg name="l_finger_slot"  default="6"/>   
+  <xacro:arg name="l_finger_tip"   default="pa_tip"/>
+  <xacro:arg name="l_finger_grasp" default="inner"/>
+  
+  <xacro:arg name="r_finger"       default="pa_finger"/>
+  <xacro:arg name="r_finger_slot"  default="6"/>   
+  <xacro:arg name="r_finger_tip"   default="pa_tip"/>
+  <xacro:arg name="r_finger_grasp" default="inner"/>
+
+  <xacro:arg name="left_ft_sensor" default="false"/>
+  <xacro:arg name="right_ft_sensor" default="true"/>
+  
+  <!-- Baxter Base URDF -->
+  <xacro:include filename="$(find birl_baxter_description)/urdf/baxter_element/baxter_base/baxter_base_ft.urdf.xacro">
+    <xacro:arg name="gazebo" value="${gazebo}"/>
+    <xacro:arg name="left_ft_sensor" value="$(arg left_ft_sensor)"/>
+    <xacro:arg name="right_ft_sensor" value="$(arg right_ft_sensor)"/> 
+  </xacro:include>
+
+  <!-- Baxter Pedestal -->
+  <xacro:if value="$(arg pedestal)">
+    <xacro:include filename="$(find baxter_description)/urdf/pedestal/pedestal.xacro">
+      <xacro:arg name="gazebo" value="${gazebo}"/>
+    </xacro:include>
+  </xacro:if>
+
+  <!-- Left End Effector -->
+  
+    <xacro:include filename="$(find birl_baxter_description)/urdf/baxter_element/left_end_pa_effector.urdf.xacro" >
+      <xacro:arg name="left_camera_frame" default="$(left_camera_frame)"/>
+      <xacro:arg name="l_finger" default="$(l_finger)"/>
+      <xacro:arg name="l_finger_slot" default="$(l_finger_slot)"/>
+      <xacro:arg name="l_finger_tip" default="$(l_finger_tip)"/>
+      <xacro:arg name="l_finger_grasp" default="$(l_finger_grasp)"/>
+    </xacro:include>  
+
+
+
+    <!-- Right End Effector -->
+    <xacro:include filename="$(find birl_baxter_description)/urdf/baxter_element/right_end_pa_effector.urdf.xacro" >
+      <xacro:arg name="right_camera_frame" default="$(right_camera_frame)"/>
+      <xacro:arg name="r_finger" default="$(r_finger)"/>
+      <xacro:arg name="r_finger_slot" default="$(r_finger_slot)"/>
+      <xacro:arg name="r_finger_tip" default="$(r_finger_tip)"/>
+      <xacro:arg name="r_finger_grasp" default="$(r_finger_grasp)"/>
+    </xacro:include>
+    
+    <xacro:include filename="$(find birl_baxter_description)/urdf/box/box_male/robots/box_male.URDF" >
+    </xacro:include>
+  
+    
+  <!-- Table -->
+  <xacro:if value="$(arg table)">
+    <xacro:include filename="$(find birl_baxter_description)/urdf/table/table.xacro">
+    </xacro:include>
+  </xacro:if>
+
+  <!-- Asus Xtion -->
+  <xacro:if value="$(arg asus_xtion)">
+    <xacro:include filename="$(find birl_baxter_description)/urdf/asus_xtion/asus_xtion.xacro">
+    </xacro:include>
+  </xacro:if>
+
+      <xacro:include filename="$(find birl_baxter_description)/urdf/box/box_female/robots/box_female.URDF" >
+    </xacro:include>
+
+</robot>

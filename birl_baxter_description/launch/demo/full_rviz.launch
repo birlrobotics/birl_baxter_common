@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<launch>
+  <param name="robot_description" command="$(find xacro)/xacro.py --inorder $(find birl_baxter_description)/urdf/baxter_element/baxter/baxter_full.urdf.xacro
+                                           gazebo:=false
+                                           pedestal:=true
+                                           left_camera_frame:=true
+                                           left_ft_sensor:=true
+                                           right_camera_frame:=true
+                                           right_ft_sensor:=true
+                                           left_sake_gripper:=false
+                                           left_electric_gripper:=true
+                                           left_null_gripper:=false
+                                           right_sake_gripper:=true
+                                           right_electric_gripper:=false
+                                           right_null_gripper:=false
+                                           
+                                           l_finger:=standard_narrow
+                                           l_finger_slot:=6
+                                           l_finger_tip:=basic_hard_tip
+                                           l_finger_grasp:=inner
+                                           r_finger:=standard_narrow
+                                           r_finger_slot:=6
+                                           r_finger_tip:=basic_hard_tip
+                                           r_finger_grasp:=inner
+         "/>
+			
+  <!-- send fake joint values -->
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <param name="use_gui" value="true"/>
+  </node>
+
+  <!-- Combine joint values -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+  <!-- Show in RViz -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d '$(find birl_baxter_description)/launch/pa_demo_scene.rviz'"/>
+
+</launch>

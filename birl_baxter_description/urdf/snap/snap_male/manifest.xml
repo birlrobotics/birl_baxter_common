@@ -1,0 +1,6 @@
+<package>
+  <description brief="snap_male">snap_male</description>
+  <depend package="gazebo" />
+  <author>me</author>
+  <license>BSD</license>
+</package>

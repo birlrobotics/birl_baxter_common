@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<robot
+  name="snap_female">
+  <link
+    name="female_snap">
+    <inertial>
+      <origin
+        xyz="1.7185E-17 -2.0817E-17 -0.012891"
+        rpy="0 0 0" />
+      <mass
+        value="0.0104" />
+      <inertia
+        ixx="8.7571E-06"
+        ixy="3.4415E-21"
+        ixz="3.7423E-21"
+        iyy="3.844E-06"
+        iyz="-5.4697E-22"
+        izz="1.1888E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://birl_baxter_description/urdf/snap/snap_female/meshes/female_snap.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://birl_baxter_description/urdf/snap/snap_female/meshes/female_snap.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+  <joint name="male_box_joint" type="fixed">
+      <origin rpy="0 0 0" xyz="0.6 0 -0.115"/>
+      <parent link="base" />
+      <child link="female_snap"/>    
+  </joint>
+  
+   <gazebo reference="female_snap">
+    <self_collide>1</self_collide>
+      <mu1>1000</mu1>
+      <mu2>1000</mu2>
+      <fdir1>0.0 0.0 1.0</fdir1>
+      <kp>1e5</kp>
+      <kd>1.0</kd>
+  </gazebo>
+
+
+</robot>

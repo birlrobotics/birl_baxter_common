@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<robot
+  name="box_female">
+  <link
+    name="left_box_female">
+    <inertial>
+      <origin
+        xyz="2.0058E-18 -2.4286E-17 0.0051085"
+        rpy="0 0 0" />
+      <mass
+        value="0.013606" />
+      <inertia
+        ixx="8.7571E-06"
+        ixy="3.3881E-21"
+        ixz="4.0124E-22"
+        iyy="3.844E-06"
+        iyz="-7.5796E-22"
+        izz="1.1888E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://birl_baxter_description/urdf/box/box_female/meshes/box_female.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.5 0.2 0.1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://birl_baxter_description/urdf/box/box_female/meshes/box_female.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="left_female_box_joint" type="fixed">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <parent link="left_female_holder" />
+      <child link="left_box_female"/>  
+  </joint>
+    <gazebo reference="left_box_female">    
+      <selfCollide>true</selfCollide>
+      <mu1>1000</mu1>
+      <mu2>1000</mu2>
+      <fdir1>0.0 0.0 1.0</fdir1>
+      <kp>1e5</kp>
+      <kd>1.0</kd>
+  </gazebo>
+</robot>
