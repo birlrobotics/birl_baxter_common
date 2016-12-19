@@ -1,24 +1,29 @@
 <?xml version="1.0"?>
 <package>
   <name>birl_gripper_description</name>
-  <version>1.2.0</version>
+  <version>0.0.1</version>
   <description>
     Description of End Effector for  Robots from BIRL.
     This package contains the URDF and meshes describing these end effectors.
   </description>
 
   <maintainer email="522181941@qq.com">
+    BIRL
     Ben
   </maintainer>
   <license>BSD</license>
-  <url type="website">http://sdk.rethinkrobotics.com</url>
+  <url type="website">https://github.com/birlrobotics/birl_baxter_common</url>
   <url type="repository">
-    https://github.com/RethinkRobotics/baxter_common
+    https://github.com/birlrobotics/birl_baxter_common/birl_baxter_description
   </url>
   <url type="bugtracker">
-    https://github.com/RethinkRobotics/baxter_common/issues
+    https://github.com/birlrobotics/birl_baxter_common/birl_baxter_description/issues
   </url>
-  <author>Rethink Robotics Inc.</author>
+  <author>Ben</author>
 
   <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>rethink_ee_description</build_depend>
+  <run_depend>rethink_ee_description</run_depend>
+  
 </package>
