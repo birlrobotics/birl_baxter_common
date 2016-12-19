@@ -143,6 +143,17 @@
     <parent
       link="FT_right" />
     <child
-      link="FT_Top_Plate_right" />
+        link="FT_Top_Plate_right" />
+    <axis
+        xyz = "0 0 1"/>
+    <limit
+        lower = "0"
+        upper = "0.0006"
+        velocity = "0.001"
+        effort = "0.001"/>
+    <dynamics
+        damping = "1000"
+        friction = "2"/>
+    
   </joint>
 </robot>
