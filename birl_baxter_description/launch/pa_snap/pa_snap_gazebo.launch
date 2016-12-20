@@ -64,4 +64,8 @@
       <arg name="left_electric_gripper" value="$(arg left_electric_gripper)"/>
   </include>
 
+  <param name="right_tip_name" value="right_gripper" />
+  <param name="left_tip_name" value="snap_male" />
+  
+
 </launch>

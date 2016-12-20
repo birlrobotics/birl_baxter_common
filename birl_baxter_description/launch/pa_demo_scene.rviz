@@ -6,6 +6,7 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
+        - /TF1
       Splitter Ratio: 0.5
     Tree Height: 775
   - Class: rviz/Selection
@@ -82,6 +83,11 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+        box_female:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         camera_base:
           Alpha: 1
           Show Axes: false
@@ -106,11 +112,6 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        female_snap:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         head:
           Alpha: 1
           Show Axes: false
@@ -153,6 +154,11 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+        left_box_male:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         left_camera_frame:
           Alpha: 1
           Show Axes: false
@@ -375,11 +381,6 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        snap_male:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         sonar_ring:
           Alpha: 1
           Show Axes: false
@@ -401,6 +402,264 @@ Visualization Manager:
       Update Interval: 0
       Value: true
       Visual Enabled: true
+    - Class: rviz/TF
+      Enabled: true
+      Frame Timeout: 15
+      Frames:
+        All Enabled: true
+        FT_Top_Plate_right:
+          Value: true
+        FT_bottom_plate_right:
+          Value: true
+        FT_right:
+          Value: true
+        asus_xtion:
+          Value: true
+        base:
+          Value: true
+        box_female:
+          Value: true
+        camera_base:
+          Value: true
+        collision_head_link_1:
+          Value: true
+        collision_head_link_2:
+          Value: true
+        display:
+          Value: true
+        dummyhead1:
+          Value: true
+        head:
+          Value: true
+        head_camera:
+          Value: true
+        install_link:
+          Value: true
+        l_gripper_l_finger:
+          Value: true
+        l_gripper_l_finger_tip:
+          Value: true
+        l_gripper_r_finger:
+          Value: true
+        l_gripper_r_finger_tip:
+          Value: true
+        left_arm_itb:
+          Value: true
+        left_arm_mount:
+          Value: true
+        left_box_male:
+          Value: true
+        left_camera_frame:
+          Value: true
+        left_female_holder:
+          Value: true
+        left_gripper:
+          Value: true
+        left_gripper_base:
+          Value: true
+        left_hand:
+          Value: true
+        left_hand_accelerometer:
+          Value: true
+        left_hand_camera:
+          Value: true
+        left_hand_camera_axis:
+          Value: true
+        left_hand_range:
+          Value: true
+        left_lower_elbow:
+          Value: true
+        left_lower_forearm:
+          Value: true
+        left_lower_shoulder:
+          Value: true
+        left_torso_itb:
+          Value: true
+        left_upper_elbow:
+          Value: true
+        left_upper_elbow_visual:
+          Value: true
+        left_upper_forearm:
+          Value: true
+        left_upper_forearm_visual:
+          Value: true
+        left_upper_shoulder:
+          Value: true
+        left_wrist:
+          Value: true
+        pedestal:
+          Value: true
+        r_gripper_l_finger:
+          Value: true
+        r_gripper_l_finger_tip:
+          Value: true
+        r_gripper_r_finger:
+          Value: true
+        r_gripper_r_finger_tip:
+          Value: true
+        right_arm_itb:
+          Value: true
+        right_arm_mount:
+          Value: true
+        right_camera_frame:
+          Value: true
+        right_female_holder:
+          Value: true
+        right_gripper:
+          Value: true
+        right_gripper_base:
+          Value: true
+        right_hand:
+          Value: true
+        right_hand_accelerometer:
+          Value: true
+        right_hand_camera:
+          Value: true
+        right_hand_camera_axis:
+          Value: true
+        right_hand_range:
+          Value: true
+        right_lower_elbow:
+          Value: true
+        right_lower_forearm:
+          Value: true
+        right_lower_shoulder:
+          Value: true
+        right_torso_itb:
+          Value: true
+        right_upper_elbow:
+          Value: true
+        right_upper_elbow_visual:
+          Value: true
+        right_upper_forearm:
+          Value: true
+        right_upper_forearm_visual:
+          Value: true
+        right_upper_shoulder:
+          Value: true
+        right_wrist:
+          Value: true
+        screen:
+          Value: true
+        sonar_ring:
+          Value: true
+        table:
+          Value: true
+        torso:
+          Value: true
+      Marker Scale: 0.25
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: false
+      Tree:
+        base:
+          box_female:
+            {}
+          camera_base:
+            install_link:
+              asus_xtion:
+                {}
+          collision_head_link_1:
+            {}
+          collision_head_link_2:
+            {}
+          table:
+            {}
+          torso:
+            head:
+              dummyhead1:
+                {}
+              head_camera:
+                {}
+              screen:
+                display:
+                  {}
+            left_arm_mount:
+              left_upper_shoulder:
+                left_lower_shoulder:
+                  left_upper_elbow:
+                    left_lower_elbow:
+                      left_upper_forearm:
+                        left_arm_itb:
+                          {}
+                        left_lower_forearm:
+                          left_wrist:
+                            left_hand:
+                              left_camera_frame:
+                                left_female_holder:
+                                  left_box_male:
+                                    {}
+                              left_gripper_base:
+                                l_gripper_l_finger:
+                                  l_gripper_l_finger_tip:
+                                    {}
+                                l_gripper_r_finger:
+                                  l_gripper_r_finger_tip:
+                                    {}
+                                left_gripper:
+                                  {}
+                              left_hand_accelerometer:
+                                {}
+                              left_hand_camera:
+                                {}
+                              left_hand_camera_axis:
+                                {}
+                              left_hand_range:
+                                {}
+                      left_upper_forearm_visual:
+                        {}
+                  left_upper_elbow_visual:
+                    {}
+            left_torso_itb:
+              {}
+            pedestal:
+              {}
+            right_arm_mount:
+              right_upper_shoulder:
+                right_lower_shoulder:
+                  right_upper_elbow:
+                    right_lower_elbow:
+                      right_upper_forearm:
+                        right_arm_itb:
+                          {}
+                        right_lower_forearm:
+                          right_wrist:
+                            FT_bottom_plate_right:
+                              FT_right:
+                                FT_Top_Plate_right:
+                                  {}
+                            right_hand:
+                              right_camera_frame:
+                                right_female_holder:
+                                  {}
+                              right_gripper_base:
+                                r_gripper_l_finger:
+                                  r_gripper_l_finger_tip:
+                                    {}
+                                r_gripper_r_finger:
+                                  r_gripper_r_finger_tip:
+                                    {}
+                                right_gripper:
+                                  {}
+                              right_hand_accelerometer:
+                                {}
+                              right_hand_camera:
+                                {}
+                              right_hand_camera_axis:
+                                {}
+                              right_hand_range:
+                                {}
+                      right_upper_forearm_visual:
+                        {}
+                  right_upper_elbow_visual:
+                    {}
+            right_torso_itb:
+              {}
+            sonar_ring:
+              {}
+      Update Interval: 0
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
