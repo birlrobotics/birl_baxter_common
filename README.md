@@ -1,4 +1,4 @@
-# birl_baxter_common
+# birl_baxter_simulator
 
 # Purpose
 This package is used for applying Baxter robot from rethink robotics inc to experiments of our lab,BIRL.
@@ -44,25 +44,40 @@ catkin_make
 finish  installing, enjoy!
 
 # Launch examples
-For the box assembly task with baxter
+Task1: place the male box to female box
 ````
-roslaunch birl_sim_examples pa_box_gazebo.launch
-````
-or 
-````
-roslaunch birl_baxter_description pa_box_gazebo.launch
-roslaunch birl_sim_examples pa_box.py
+roslaunch birl_sim_examples place_box.launch
 ````
 
-For the snap assembly task with baxter
+Task2: place the male snap to female snap
 ````
-roslaunch birl_sim_examples pa_snap_gazebo.launch
+roslaunch birl_sim_examples place_snap.launch
 ````
-or 
+
+Task3: pick and place the female box
 ````
-roslaunch birl_baxter_description pa_snap_gazebo.launch
-roslaunch birl_sim_examples pa_box.py
+roslaunch birl_sim_examples pick_n_place_box.launch
 ````
+
+
+
+If you want to look into the raw files, you can find the files blow:
+
+for the environment raw launch files, you can find the launches files here:
+````
+roscd birl_baxter_description/launch
+````
+
+for the manipulation examples file, you can find here
+````
+roscd birl_sim_examples/scripts
+````
+
+for the urdf file, you can find here
+````
+roscd birl_baxter_description/urdf
+````
+
 
 # Mechanical design source
 Here are the repo which contain our mechanical design source[birl_baxter_hands](https://github.com/birlrobotics/birl_baxter_hands)
