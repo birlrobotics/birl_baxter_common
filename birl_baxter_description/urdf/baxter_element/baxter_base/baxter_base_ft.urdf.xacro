@@ -1018,11 +1018,10 @@
       <provideFeedback>true</provideFeedback>
     </gazebo>
 
-
     <gazebo>
       <plugin name="ft_sensor_right" filename="libgazebo_ros_ft_sensor.so">
-        <updateRate>10.0</updateRate>
-        <topicName>ft_sensor_topic_right</topicName>
+        <updateRate>200.0</updateRate>
+        <topicName>wrench/filtered/right</topicName>
         <jointName>right_w2</jointName>
       </plugin>
     </gazebo>
@@ -1064,16 +1063,15 @@
       <child link="FT_bottom_plate_left"/>
     </joint>
 
-    <gazebo reference="FT_Top_Joint_left">
+    <gazebo reference="left_w2">
       <provideFeedback>true</provideFeedback>
     </gazebo>
 
-
     <gazebo>
       <plugin name="ft_sensor_left" filename="libgazebo_ros_ft_sensor.so">
-        <updateRate>10.0</updateRate>
-        <topicName>ft_sensor_topic_left</topicName>
-        <jointName>FT_Top_Joint_left</jointName>
+        <updateRate>200.0</updateRate>
+        <topicName>wrench/filtered/left</topicName>
+        <jointName>left_w2</jointName>
       </plugin>
     </gazebo>
 

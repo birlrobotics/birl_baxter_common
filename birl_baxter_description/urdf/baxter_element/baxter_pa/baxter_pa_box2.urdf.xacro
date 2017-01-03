@@ -6,22 +6,29 @@
   <!-- TODO: have an arg for pa_demo that sets correct eef's/table/xtion -->
   <xacro:arg name="table" default="true"/>
   <xacro:arg name="asus_xtion" default="true"/>
+  
   <xacro:arg name="right_camera_frame" default="true"/>
   <xacro:arg name="left_camera_frame" default="true"/>
-  <xacro:arg name="left_male_holder" default="true"/>  
-  <xacro:arg name="right_male_holder" default="true"/>
   
-  <xacro:arg name="l_finger"       default="pa_finger"/>
-  <xacro:arg name="l_finger_slot"  default="6"/>   
-  <xacro:arg name="l_finger_tip"   default="pa_tip"/>
+  <xacro:arg name="left_male_holder" default="false"/>  
+  <xacro:arg name="right_male_holder" default="false"/>
+  
+  <xacro:arg name="l_finger"       default="standard_narrow"/>
+  <xacro:arg name="l_finger_slot"  default="4"/>   
+  <xacro:arg name="l_finger_tip"   default="paddle_tip"/>
   <xacro:arg name="l_finger_grasp" default="inner"/>
   
   <xacro:arg name="r_finger"       default="pa_finger"/>
   <xacro:arg name="r_finger_slot"  default="6"/>   
   <xacro:arg name="r_finger_tip"   default="pa_tip"/>
   <xacro:arg name="r_finger_grasp" default="inner"/>
-
-  <xacro:arg name="left_ft_sensor" default="false"/>
+  <!--options:
+      
+      finger = extended_wide extended_narrow standard_narrow standard_wide pa_finger
+      finger_slot = 1-6
+      fing_tip = basic_hard_tip basic_soft_tip half_round_tip paddle_tip none-->
+  
+  <xacro:arg name="left_ft_sensor" default="true"/>
   <xacro:arg name="right_ft_sensor" default="true"/>
   
   <!-- Baxter Base URDF -->
@@ -61,16 +68,6 @@
       <xacro:arg name="r_finger_grasp" default="$(r_finger_grasp)"/>
     </xacro:include>
     
-    <xacro:include filename="$(find birl_baxter_description)/urdf/box/box_male/robots/box_male.URDF" >
-    </xacro:include>
-    
-  <joint name="left_male_box_joint" type="fixed">
-      <origin rpy="0 0 0" xyz="0 0 0.015"/>
-      <parent link="left_male_holder" />
-      <child link="left_box_male"/>  
-  </joint>
-    
-  <!-- Table -->
   <xacro:if value="$(arg table)">
     <xacro:include filename="$(find birl_baxter_description)/urdf/table/table.xacro">
     </xacro:include>
@@ -91,13 +88,6 @@
       <child link="camera_base"/>
     </joint>
   </xacro:if>
-
-      <xacro:include filename="$(find birl_baxter_description)/urdf/box/box_female/robots/box_female.URDF" >
-    </xacro:include>
-    <joint name="female_box_joint" type="fixed">
-      <origin rpy="0 0 0" xyz="0.6 0 -0.115"/>
-      <parent link="base" />
-      <child link="box_female"/>    
-    </joint>
     
+
 </robot>

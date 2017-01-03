@@ -58,11 +58,11 @@
       <inertia ixx="0.004006" ixy="0.000230" ixz="0.000002" iyy="0.002800" iyz="0.000029" izz="0.001509"/>
     </inertial>
   </link>
-  <joint name="camera_base_fixed" type="fixed">
+<!--  <joint name="camera_base_fixed" type="fixed">
     <origin rpy="0 0 0" xyz="1.0 0.0 -0.93"/>
     <parent link="base"/>
     <child link="camera_base"/>
-  </joint>
+  </joint>-->
   <joint name="install_link_fixed" type="fixed">
     <origin rpy="0 0 0" xyz="-0.35 -0.05 1.5"/>
     <parent link="camera_base"/>

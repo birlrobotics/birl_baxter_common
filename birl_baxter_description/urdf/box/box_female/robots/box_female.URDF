@@ -41,19 +41,11 @@
       </geometry>
     </collision>
   </link>
-
-  <joint name="female_box_joint" type="fixed">
-      <origin rpy="0 0 0" xyz="0.6 0 -0.115"/>
-      <parent link="base" />
-      <child link="box_female"/>    
-  </joint>
-   <gazebo reference="box_female">
+  <gazebo reference="box_female">
     <self_collide>1</self_collide>
-          <mu1>1000</mu1>
-      <mu2>1000</mu2>
-      <fdir1>0.0 0.0 1.0</fdir1>
-      <kp>1e5</kp>
-      <kd>1.0</kd>
+    <mu1>1000000</mu1>
+    <mu2>1000000</mu2>
+    <material>Gazebo/Green</material>   
   </gazebo>
   
 </robot>

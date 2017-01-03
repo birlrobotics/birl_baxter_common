@@ -27,8 +27,7 @@
       <mu1>1000</mu1>
       <mu2>1000</mu2>
       <fdir1>0.0 0.0 1.0</fdir1>
-      <kp>1e5</kp>
-      <kd>1.0</kd>
+      <self_collide>1</self_collide>
     </gazebo>
 
    <xacro:property name="none" value="[none, false, null, empty]" scope="local"/>

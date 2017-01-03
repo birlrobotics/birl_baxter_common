@@ -7,6 +7,7 @@
   <xacro:arg name="r_finger_grasp" default="inner"/>
   
   <xacro:arg name="right_camera_frame" default="false"/>
+  <xacro:arg name="right_male_holder" default="false"/>
   
   <xacro:include filename="$(find birl_gripper_description)/urdf/electric_gripper/rethink_electric_pa_gripper.xacro" />
   <xacro:rethink_electric_gripper side="right"
@@ -18,5 +19,6 @@
                                   r_finger_slot="$(arg r_finger_slot)"
                                   r_finger_tip="$(arg r_finger_tip)"
                                   r_finger_grasp="$(arg r_finger_grasp)"
-                                  camera_frame="$(arg right_camera_frame)"/>
+                                  camera_frame="$(arg right_camera_frame)"
+                                  male_holder="$(arg right_male_holder)"/>
 </robot>

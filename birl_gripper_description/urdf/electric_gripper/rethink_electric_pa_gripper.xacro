@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="rethink_electric_gripper">
-  <xacro:macro name="rethink_electric_gripper" params="side r_finger r_finger_slot r_finger_tip r_finger_grasp l_finger l_finger_slot l_finger_tip l_finger_grasp camera_frame">
+  <xacro:macro name="rethink_electric_gripper" params="side r_finger r_finger_slot r_finger_tip r_finger_grasp l_finger l_finger_slot l_finger_tip l_finger_grasp camera_frame male_holder">
     <xacro:property name="gripper_side" value="${side[0]}" scope="local"/>
     <!-- Base of end effector -->
     <link name="${side}_gripper_base">
@@ -31,7 +31,6 @@
 
 
         <!--camera frame  -->    
-    <xacro:if value="${camera_frame}">
 <!--        <link name="${side}_gripper_base1">
           <visual>
             <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -62,108 +61,146 @@
       <child link="${side}_gripper_base1"/>
     </joint>
 -->
-    
+<xacro:if value="${camera_frame}">    
   <link name="${side}_camera_frame">
     <inertial>
       <origin
-        xyz="0.024842 -0.00021599 0.048722"
-        rpy="0 0 0" />
+          xyz="0.024842 -0.00021599 0.048722"
+          rpy="0 0 0" />
       <mass
-        value="0.08" />
+          value="0.08" />
       <inertia
-        ixx="8.4498E-05"
-        ixy="-1.8832E-09"
-        ixz="1.705E-07"
-        iyy="7.8484E-05"
-        iyz="-2.2039E-07"
-        izz="7.3534E-05" />
+          ixx="8.4498E-05"
+          ixy="-1.8832E-09"
+          ixz="1.705E-07"
+          iyy="7.8484E-05"
+          iyz="-2.2039E-07"
+          izz="7.3534E-05" />
     </inertial>
     <visual>
       <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+          xyz="0 0 0"
+          rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://birl_gripper_description/meshes/female_camera/camera_frame.STL" />
+            filename="package://birl_gripper_description/meshes/male_camera/camera_frame.STL" />
       </geometry>
       <material
-        name="">
+          name="">
         <color
-          rgba="0.2 0.2 0.2 1" />
+            rgba="0.2 0.2 0.2 1" />
       </material>
     </visual>
     <collision>
       <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+          xyz="0 0 0"
+          rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://birl_gripper_description/meshes/female_camera/camera_frame.STL" />
+            filename="package://birl_gripper_description/meshes/male_camera/camera_frame.STL" />
       </geometry>
     </collision>
   </link>
+
+  <joint name="${side}_gripper_base_camera_frame" type="fixed">
+    <origin rpy="0 0 ${pi}" xyz="0.020 0 0"/>
+    <parent link="${side}_hand"/>
+    <child link="${side}_camera_frame"/>
+  </joint>
+  <gazebo reference="${side}_camera_frame">
+    <mu1>1000</mu1>
+    <mu2>1000</mu2>
+    <fdir1>0.0 0.0 1.0</fdir1>
+    <kp>1e4</kp>
+    <kd>1.0</kd>
+    <material>Gazebo/Gold</material>
+    <self_collide>1</self_collide>
+  </gazebo>
+
+
+
+      <joint name="${side}_pa_endpoint" type="fixed">
+      <origin rpy="0 0 0" xyz="0 0 0.052"/>
+      <parent link="${side}_gripper_base"/>
+      <child link="${side}_pa_gripper"/>
+    </joint>
+    <!-- Electric Gripper Tip link -->
+    <link name="${side}_pa_gripper">
+      <inertial>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <mass value="0.0001"/>
+        <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0.0"/>
+      </inertial>
+    </link>
+    
+</xacro:if>
+
+<!--<xacro:if value="${male_holder}">-->
+<xacro:if value="${male_holder}">  
   <link
-    name="${side}_female_holder">
+      name="${side}_male_holder">
     <inertial>
       <origin
-        xyz="1.2757E-10 9.385E-11 -0.001967"
-        rpy="0 0 0" />
+          xyz="1.2757E-10 9.385E-11 -0.001967"
+          rpy="0 0 0" />
       <mass
-        value="0.0301" />
+          value="0.0301" />
       <inertia
-        ixx="9.4008E-06"
-        ixy="-3.1962E-14"
-        ixz="3.1794E-15"
-        iyy="3.9813E-06"
-        iyz="2.3567E-15"
-        izz="1.3208E-05" />
+          ixx="9.4008E-06"
+          ixy="-3.1962E-14"
+          ixz="3.1794E-15"
+          iyy="3.9813E-06"
+          iyz="2.3567E-15"
+          izz="1.3208E-05" />
     </inertial>
     <visual>
       <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+          xyz="0 0 0"
+          rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://birl_gripper_description/meshes/female_camera/female_holder.STL" />
+            filename="package://birl_gripper_description/meshes/male_camera/male_holder.STL" />
       </geometry>
       <material
-        name="">
+          name="">
         <color
-          rgba="0 0.552 0 1" />
+            rgba="0 0.552 0 1" />
       </material>
     </visual>
     <collision>
       <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+          xyz="0 0 0"
+          rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://birl_gripper_description/meshes/female_camera/female_holder.STL" />
+            filename="package://birl_gripper_description/meshes/male_camera/male_holder.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="${side}_camera_frame_joint"
-    type="fixed">
+      name="${side}_camera_frame_joint"
+      type="fixed">
     <origin
-      xyz="0.025 -0.00031879 0.076"
-      rpy="4.7429E-14 8.4242E-30 1.4971E-16" />
+        xyz="0.025 -0.00031879 0.076"
+        rpy="4.7429E-14 8.4242E-30 1.4971E-16" />
     <parent
-      link="${side}_camera_frame" />
+        link="${side}_camera_frame" />
     <child
-      link="${side}_female_holder" />
+        link="${side}_male_holder" />
     <axis
-      xyz="0 0 0" />
+        xyz="0 0 0" />
   </joint>
-
   
-    <joint name="${side}_gripper_base_camera_frame" type="fixed">
-      <origin rpy="0 0 ${pi}" xyz="0.020 0 0"/>
-      <parent link="${side}_hand"/>
-      <child link="${side}_camera_frame"/>
-    </joint>
-  
-        </xacro:if>
+  <gazebo reference="${side}_male_holder">
+    <mu1>1000</mu1>
+    <mu2>1000</mu2>
+    <fdir1>0.0 0.0 1.0</fdir1>
+    <kp>1e4</kp>
+    <kd>1.0</kd>
+    <material>Gazebo/Purple</material>
+    <self_collide>1</self_collide>
+  </gazebo>
+</xacro:if>
 
 
     <!-- Left finger link -->
