@@ -41,18 +41,20 @@
       </geometry>
     </collision>
   </link>
-  <joint name="left_male_snap_joint" type="fixed">
+  <gazebo reference="snap_male">    
+    <self_collide>1</self_collide>
+    <mu1>1000</mu1>
+    <mu2>1000</mu2>
+    <fdir1>0.0 0.0 1.0</fdir1>
+    <kp>1e5</kp>
+    <kd>1.0</kd>
+    <material>Gazebo/Turquoise</material>
+  </gazebo>
+  <!--
+      <joint name="left_male_snap_joint" type="fixed">
       <origin rpy="${pi} 0 0" xyz="0 0 0.01"/>
       <parent link="left_female_holder" />
       <child link="snap_male"/>
-  </joint>
-    <gazebo reference="snap_male">    
-      <self_collide>1</self_collide>
-      <mu1>1000</mu1>
-      <mu2>1000</mu2>
-      <fdir1>0.0 0.0 1.0</fdir1>
-      <kp>1e5</kp>
-      <kd>1.0</kd>
-  </gazebo>  
+  </joint> --> 
 </robot>
 

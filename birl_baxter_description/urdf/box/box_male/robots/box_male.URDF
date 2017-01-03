@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <robot
-  name="left_box_male">
+  name="box_male">
   <link
-    name="left_box_male">
+    name="box_male">
     <inertial>
       <origin
         xyz="0 -1.0408E-17 -0.0098915"
@@ -42,7 +42,7 @@
     </collision>
   </link>
 
-    <gazebo reference="left_box_male">    
+    <gazebo reference="box_male">    
       <self_collide>1</self_collide>
       <mu1>1000000</mu1>
       <mu2>1000000</mu2>

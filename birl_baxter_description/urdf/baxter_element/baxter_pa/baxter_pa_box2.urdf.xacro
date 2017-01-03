@@ -12,22 +12,22 @@
   
   <xacro:arg name="left_male_holder" default="false"/>  
   <xacro:arg name="right_male_holder" default="false"/>
-  
-  <xacro:arg name="l_finger"       default="standard_narrow"/>
-  <xacro:arg name="l_finger_slot"  default="4"/>   
-  <xacro:arg name="l_finger_tip"   default="paddle_tip"/>
-  <xacro:arg name="l_finger_grasp" default="inner"/>
-  
-  <xacro:arg name="r_finger"       default="pa_finger"/>
-  <xacro:arg name="r_finger_slot"  default="6"/>   
-  <xacro:arg name="r_finger_tip"   default="pa_tip"/>
-  <xacro:arg name="r_finger_grasp" default="inner"/>
   <!--options:
       
       finger = extended_wide extended_narrow standard_narrow standard_wide pa_finger
       finger_slot = 1-6
       fing_tip = basic_hard_tip basic_soft_tip half_round_tip paddle_tip none-->
+    
+  <xacro:arg name="l_finger"       default="standard_narrow"/>
+  <xacro:arg name="l_finger_slot"  default="4"/>   
+  <xacro:arg name="l_finger_tip"   default="paddle_tip"/>
+  <xacro:arg name="l_finger_grasp" default="inner"/>
   
+  <xacro:arg name="r_finger"       default="standard_narrow"/>
+  <xacro:arg name="r_finger_slot"  default="4"/>   
+  <xacro:arg name="r_finger_tip"   default="paddle_tip"/>
+  <xacro:arg name="r_finger_grasp" default="inner"/>
+
   <xacro:arg name="left_ft_sensor" default="true"/>
   <xacro:arg name="right_ft_sensor" default="true"/>
   

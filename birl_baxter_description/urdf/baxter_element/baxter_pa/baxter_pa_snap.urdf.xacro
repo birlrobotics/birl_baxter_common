@@ -8,7 +8,13 @@
   <xacro:arg name="asus_xtion" default="true"/>
   <xacro:arg name="right_camera_frame" default="true"/>
   <xacro:arg name="left_camera_frame" default="true"/>
-  
+  <xacro:arg name="left_male_holder" default="true"/>  
+  <xacro:arg name="right_male_holder" default="true"/>
+  <!--options:
+      
+      finger = extended_wide extended_narrow standard_narrow standard_wide pa_finger
+      finger_slot = 1-6
+      fing_tip = basic_hard_tip basic_soft_tip half_round_tip paddle_tip none-->  
   <xacro:arg name="l_finger"       default="pa_finger"/>
   <xacro:arg name="l_finger_slot"  default="6"/>   
   <xacro:arg name="l_finger_tip"   default="pa_tip"/>
@@ -19,7 +25,7 @@
   <xacro:arg name="r_finger_tip"   default="pa_tip"/>
   <xacro:arg name="r_finger_grasp" default="inner"/>
 
-  <xacro:arg name="left_ft_sensor" default="false"/>
+  <xacro:arg name="left_ft_sensor" default="true"/>
   <xacro:arg name="right_ft_sensor" default="true"/>
   
   <!-- Baxter Base URDF -->
@@ -40,6 +46,7 @@
   
     <xacro:include filename="$(find birl_baxter_description)/urdf/baxter_element/left_end_pa_effector.urdf.xacro" >
       <xacro:arg name="left_camera_frame" default="$(left_camera_frame)"/>
+      <xacro:arg name="left_male_gripper" default="$(left_male_gripper)"/>
       <xacro:arg name="l_finger" default="$(l_finger)"/>
       <xacro:arg name="l_finger_slot" default="$(l_finger_slot)"/>
       <xacro:arg name="l_finger_tip" default="$(l_finger_tip)"/>
@@ -51,6 +58,7 @@
     <!-- Right End Effector -->
     <xacro:include filename="$(find birl_baxter_description)/urdf/baxter_element/right_end_pa_effector.urdf.xacro" >
       <xacro:arg name="right_camera_frame" default="$(right_camera_frame)"/>
+      <xacro:arg name="right_male_gripper" default="$(right_male_gripper)"/>
       <xacro:arg name="r_finger" default="$(r_finger)"/>
       <xacro:arg name="r_finger_slot" default="$(r_finger_slot)"/>
       <xacro:arg name="r_finger_tip" default="$(r_finger_tip)"/>
@@ -59,21 +67,45 @@
     
     <xacro:include filename="$(find birl_baxter_description)/urdf/snap/snap_male/robots/snap_male.URDF" >
     </xacro:include>
+
+
+  <joint name="right_male_snap_joint" type="fixed">
+    <origin rpy="${pi} 0 0" xyz="0 0 0.01"/>
+    <parent link="right_male_holder" />
+    <child link="snap_male"/>
+  </joint>
   
-    
+  
   <!-- Table -->
   <xacro:if value="$(arg table)">
     <xacro:include filename="$(find birl_baxter_description)/urdf/table/table.xacro">
     </xacro:include>
+    <joint name="table_fixed" type="fixed">
+      <origin rpy="0 0 0" xyz="0.0 0.0 -0.93"/>
+      <parent link="base"/>
+      <child link="table"/>
+    </joint>
   </xacro:if>
 
   <!-- Asus Xtion -->
   <xacro:if value="$(arg asus_xtion)">
     <xacro:include filename="$(find birl_baxter_description)/urdf/asus_xtion/asus_xtion.xacro">
     </xacro:include>
+    <joint name="camera_base_fixed" type="fixed">
+      <origin rpy="0 0 0" xyz="1.0 0.0 -0.93"/>
+      <parent link="base"/>
+      <child link="camera_base"/>
+    </joint>
   </xacro:if>
 
-      <xacro:include filename="$(find birl_baxter_description)/urdf/snap/snap_female/robots/snap_female.URDF" >
-    </xacro:include>
+  <xacro:include filename="$(find birl_baxter_description)/urdf/snap/snap_female/robots/snap_female.URDF" >
+  </xacro:include>
+   <joint name="female_snap_joint" type="fixed">
+      <origin rpy="0 0 0" xyz="0.6 0 -0.115"/>
+      <parent link="base" />
+      <child link="female_snap"/>    
+  </joint>
 
+  
 </robot>
+

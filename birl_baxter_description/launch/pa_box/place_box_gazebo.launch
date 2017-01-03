@@ -60,11 +60,11 @@
 
   <!-- ros_control baxter launch file -->
   <include file="$(find baxter_sim_hardware)/launch/baxter_sdk_control.launch">
-      <arg name="right_electric_gripper" value="$(arg right_electric_gripper)"/>
-      <arg name="left_electric_gripper" value="$(arg left_electric_gripper)"/>
+    <arg name="right_electric_gripper" value="$(arg right_electric_gripper)"/>
+    <arg name="left_electric_gripper" value="$(arg left_electric_gripper)"/>
   </include>
 
-  <param name="right_tip_name" value="right_gripper" />
-  <param name="left_tip_name" value="left_box_male" />  
-
+  <param name="right_tip_name" value="box_male" />
+  <param name="left_tip_name" value="left_gripper" />
+  
 </launch>

@@ -19,12 +19,12 @@
              to launching baxter_world -->
   <arg name="load_robot_description" default="true"/>
   <param if="$(arg load_robot_description)" name="robot_description"
-         command="$(find xacro)/xacro.py --inorder $(find birl_baxter_description)/urdf/baxter_element/baxter_pa/baxter_pa_snap.urdf.xacro
+         command="$(find xacro)/xacro.py --inorder $(find birl_baxter_description)/urdf/baxter_element/baxter_pa/baxter_pa_box2.urdf.xacro
                   gazebo:=true
                   pedestal:=true
                   "/>
 
-  <!-- We resume the logic in empty_world.launch, changing the name of the world to be launched -->
+  <!-- We resume the logic in emptyoo_world.launch, changing the name of the world to be launched -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="world_name" value="$(find baxter_gazebo)/worlds/baxter.world"/>
     <arg name="debug" value="$(arg debug)" />
@@ -65,7 +65,6 @@
   </include>
 
   <param name="right_tip_name" value="right_gripper" />
-  <param name="left_tip_name" value="snap_male" />
-  
+  <param name="left_tip_name" value="left_gripper" />  
 
 </launch>

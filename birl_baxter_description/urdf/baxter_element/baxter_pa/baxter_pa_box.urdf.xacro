@@ -10,7 +10,13 @@
   <xacro:arg name="left_camera_frame" default="true"/>
   <xacro:arg name="left_male_holder" default="true"/>  
   <xacro:arg name="right_male_holder" default="true"/>
-  
+
+
+    <!--options:
+      
+      finger = extended_wide extended_narrow standard_narrow standard_wide pa_finger
+      finger_slot = 1-6
+      fing_tip = basic_hard_tip basic_soft_tip half_round_tip paddle_tip none-->
   <xacro:arg name="l_finger"       default="pa_finger"/>
   <xacro:arg name="l_finger_slot"  default="6"/>   
   <xacro:arg name="l_finger_tip"   default="pa_tip"/>
@@ -64,10 +70,10 @@
     <xacro:include filename="$(find birl_baxter_description)/urdf/box/box_male/robots/box_male.URDF" >
     </xacro:include>
     
-  <joint name="left_male_box_joint" type="fixed">
+  <joint name="right_male_box_joint" type="fixed">
       <origin rpy="0 0 0" xyz="0 0 0.015"/>
-      <parent link="left_male_holder" />
-      <child link="left_box_male"/>  
+      <parent link="right_male_holder" />
+      <child link="box_male"/>  
   </joint>
     
   <!-- Table -->
@@ -101,3 +107,25 @@
     </joint>
     
 </robot>
+
+
+
+<!--      <xacro:include filename="$(find birl_baxter_description)/urdf/snap/snap_female/robots/snap_female.URDF" >
+      </xacro:include>
+   <joint name="male_box_joint" type="fixed">
+      <origin rpy="0 0 0" xyz="0.6 0 -0.115"/>
+      <parent link="base" />
+      <child link="female_snap"/>    
+  </joint>
+-->
+
+
+<!--    
+    <xacro:include filename="$(find birl_baxter_description)/urdf/snap/snap_male/robots/snap_male.URDF" >
+    </xacro:include>
+   <joint name="left_male_snap_joint" type="fixed">
+      <origin rpy="${pi} 0 0" xyz="0 0 0.01"/>
+      <parent link="left_male_holder" />
+      <child link="snap_male"/>
+  </joint> 
+    -->
