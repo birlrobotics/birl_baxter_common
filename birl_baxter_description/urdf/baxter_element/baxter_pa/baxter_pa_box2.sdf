@@ -1,0 +1,1942 @@
+<sdf version='1.4'>
+  <model name='baxter'>
+    <link name='base'>
+      <pose>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.447735 -0.000225642 -0.514549 0 -0 0</pose>
+        <mass>218.917</mass>
+        <inertia>
+          <ixx>64.6929</ixx>
+          <ixy>0.0127436</ixy>
+          <ixz>42.0215</ixz>
+          <iyy>106.871</iyy>
+          <iyz>0.0587027</iyz>
+          <izz>54.9924</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_collision_asus_xtion'>
+        <pose>0.6325 -0.05 0.57 -3.14159 -2.06823e-13 -1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://birl_baxter_description/meshes/asus_xtion/asus_xtion_pro_live.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_collision_camera_base'>
+        <pose>1 0 -0.93 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://birl_baxter_description/meshes/asus_xtion/camera_base.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_collision_collision_head_link_1'>
+        <pose>0.04 -0.04 0.75 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.22</radius>
+          </sphere>
+        </geometry>
+      </collision>
+      <collision name='base_collision_collision_head_link_2'>
+        <pose>0.04 0.04 0.75 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.22</radius>
+          </sphere>
+        </geometry>
+      </collision>
+      <collision name='base_collision_install_link'>
+        <pose>0.65 -0.05 0.57 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://birl_baxter_description/meshes/asus_xtion/install_link.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_collision_pedestal'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://baxter_description/meshes/base/pedestal_link_collision.DAE</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_collision_sonar_ring'>
+        <pose>0.0947 0 0.817 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001</radius>
+          </sphere>
+        </geometry>
+      </collision>
+      <collision name='base_collision_table'>
+        <pose>0.6 0 -0.93 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://birl_baxter_description/meshes/table/table.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>100000</kp>
+              <kd>1</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1e+06</mu>
+              <mu2>1e+06</mu2>
+              <fdir1>0 0 1</fdir1>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='base_collision_torso'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://baxter_description/meshes/torso/base_link_collision.DAE</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='base_visual_asus_xtion'>
+        <pose>0.6325 -0.05 0.57 -3.14159 -2.06823e-13 -1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://birl_baxter_description/meshes/asus_xtion/asus_xtion_pro_live.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_visual_camera_base'>
+        <pose>1 0 -0.93 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://birl_baxter_description/meshes/asus_xtion/camera_base.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_visual_collision_head_link_1'>
+        <pose>0.11 0 0.75 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001</radius>
+          </sphere>
+        </geometry>
+      </visual>
+      <visual name='base_visual_collision_head_link_2'>
+        <pose>0.11 0 0.75 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001</radius>
+          </sphere>
+        </geometry>
+      </visual>
+      <visual name='base_visual_install_link'>
+        <pose>0.65 -0.05 0.57 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://birl_baxter_description/meshes/asus_xtion/install_link.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_visual_pedestal'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://baxter_description/meshes/base/PEDESTAL.DAE</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_visual_sonar_ring'>
+        <pose>0.06 0 0.82653 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.01</length>
+            <radius>0.085</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+      <visual name='base_visual_table'>
+        <pose>0.6 0 -0.93 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://birl_baxter_description/meshes/table/table.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_visual_torso'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://baxter_description/meshes/torso/base_link.DAE</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+      <self_collide>1</self_collide>
+    </link>
+    <link name='head'>
+      <pose>0.06 0 0.686 0 -0 0</pose>
+      <inertial>
+        <pose>0.0546769 1.41761e-18 4.85084e-06 0 -0 0</pose>
+        <mass>0.988238</mass>
+        <inertia>
+          <ixx>0.00620194</ixx>
+          <ixy>0.000202093</ixy>
+          <ixz>0.000495898</ixz>
+          <iyy>0.010977</iyy>
+          <iyz>-0.00109806</iyz>
+          <izz>0.00983914</izz>
+        </inertia>
+      </inertial>
+      <collision name='head_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001</radius>
+          </sphere>
+        </geometry>
+      </collision>
+      <collision name='head_collision_screen'>
+        <pose>0.1227 0 0 1.75057 5.55112e-17 1.5708</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001</radius>
+          </sphere>
+        </geometry>
+      </collision>
+      <visual name='head_visual'>
+        <pose>0 0 0.00953 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://baxter_description/meshes/head/H0.DAE</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='head_visual_display'>
+        <pose>0.119839 1.40131e-14 -0.0157421 2.01237 5.55112e-17 1.5708</pose>
+        <geometry>
+          <box>
+            <size>0.218 0.16 0.001</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name='head_visual_screen'>
+        <pose>0.0868552 1.75522e-13 -0.00317182 1.5708 0.179774 8.02016e-14</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://baxter_description/meshes/head/H1.DAE</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='head_pan' type='revolute'>
+      <child>head</child>
+      <parent>base</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.3963</lower>
+          <upper>1.3963</upper>
+          <effort>50000</effort>
+          <velocity>10000</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.7</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='left_upper_shoulder'>
+      <pose>0.0640272 0.259027 0.129626 0 -0 0.7854</pose>
+      <inertial>
+        <pose>0.01783 0.00086 0.19127 0 -0 0</pose>
+        <mass>5.70044</mass>
+        <inertia>
+          <ixx>0.047091</ixx>
+          <ixy>0.000127876</ixy>
+          <ixz>0.0061487</ixz>
+          <iyy>0.0376698</iyy>
+          <iyz>0.000780869</iyz>
+          <izz>0.0359599</izz>
+        </inertia>
+      </inertial>
+      <collision name='left_upper_shoulder_collision'>
+        <pose>0 0 0.1361 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.2722</length>
+            <radius>0.06</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='left_upper_shoulder_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://baxter_description/meshes/upper_shoulder/S0.DAE</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='left_s0' type='revolute'>
+      <child>left_upper_shoulder</child>
+      <parent>base</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.70168</lower>
+          <upper>1.70168</upper>
+          <effort>50</effort>
+          <velocity>1.5</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.7</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='left_lower_shoulder'>
+      <pose>0.112818 0.307818 0.399976 -1.5708 -0 0.7854</pose>
+      <inertial>
+        <pose>0.0684512 0.00268992 -0.00528984 0 -0 0</pose>
+        <mass>3.22708</mass>
+        <inertia>
+          <ixx>0.0117521</ixx>
+          <ixy>-0.000300954</ixy>
+          <ixz>0.00207674</ixz>
+          <iyy>0.0278861</iyy>
+          <iyz>-0.000188219</iyz>
+          <izz>0.0207877</izz>
+        </inertia>
+      </inertial>
+      <collision name='left_lower_shoulder_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.12</length>
+            <radius>0.06</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name='left_lower_shoulder_collision_left_upper_elbow_visual'>
+        <pose>0.2435 -6.68382e-13 6.68382e-13 1.5708 -5.55112e-17 1.5708</pose>
+        <geometry>
+          <cylinder>
+            <length>0.273</length>
+            <radius>0.06</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='left_lower_shoulder_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://baxter_description/meshes/lower_shoulder/S1.DAE</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='left_s1' type='revolute'>
+      <child>left_lower_shoulder</child>
+      <parent>left_upper_shoulder</parent>
+      <axis>
+        <xyz>-0.707108 0.707105 4.89662e-12</xyz>
+        <limit>
+          <lower>-2.147</lower>
+          <upper>1.047</upper>
+          <effort>50</effort>
+          <velocity>1.5</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.7</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='left_upper_elbow'>
+      <pose>0.184942 0.379943 0.399976 -2.35616 1.57079 -1.57076</pose>
+      <inertial>
+        <pose>-0.00276 0.00132 0.18086 0 -0 0</pose>
+        <mass>4.31272</mass>
+        <inertia>
+          <ixx>0.0266173</ixx>
+          <ixy>0.000292706</ixy>
+          <ixz>0.0039219</ixz>
+          <iyy>0.0284436</iyy>
+          <iyz>0.00108389</iyz>
+          <izz>0.0124801</izz>
+        </inertia>
+      </inertial>
+      <collision name='left_upper_elbow_collision'>
+        <pose>0 0 -0.0535 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.107</length>
+            <radius>0.06</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='left_upper_elbow_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://baxter_description/meshes/upper_elbow/E0.DAE</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='left_e0' type='revolute'>
+      <child>left_upper_elbow</child>
+      <parent>left_lower_shoulder</parent>
+      <axis>
+        <xyz>0.707105 0.707108 4.8965e-12</xyz>
+        <limit>
+          <lower>-3.05418</lower>
+          <upper>3.05418</upper>
+          <effort>50</effort>
+          <velocity>1.5</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.7</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='left_lower_elbow'>
+      <pose>0.370501 0.565502 0.330976 -1.5708 -0 0.7854</pose>
+      <inertial>
+        <pose>0.026113 0.00158992 -0.0111695 0 -0 0</pose>
+        <mass>2.07216</mass>
+        <inertia>
+          <ixx>0.00711585</ixx>
+          <ixy>0.000360372</ixy>
+          <ixz>0.00074588</ixz>
+          <iyy>0.0131827</iyy>
+          <iyz>-0.000196632</iyz>
+          <izz>0.00926891</izz>
+        </inertia>
+      </inertial>
+      <collision name='left_lower_elbow_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.06</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name='left_lower_elbow_collision_left_upper_forearm_visual'>
+        <pose>0.224 -6.6594e-13 6.6594e-13 1.5708 -5.55112e-17 1.5708</pose>
+        <geometry>
+          <cylinder>
+            <length>0.272</length>
+            <radius>0.06</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='left_lower_elbow_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://baxter_description/meshes/lower_elbow/E1.DAE</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='left_e1' type='revolute'>
+      <child>left_lower_elbow</child>
+      <parent>left_upper_elbow</parent>
+      <axis>
+        <xyz>-0.707108 0.707105 9.79346e-12</xyz>
+        <limit>
+          <lower>-0.05</lower>
+          <upper>2.618</upper>
+          <effort>50</effort>
+          <velocity>1.5</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.7</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='left_upper_forearm'>
+      <pose>0.44375 0.638751 0.330976 -2.03443 1.57079 -1.24903</pose>
+      <inertial>
+        <pose>-0.00168244 0.0045998 0.139519 0 -0 0</pose>
+        <mass>2.24675</mass>
+        <inertia>
+          <ixx>0.0166775</ixx>
+          <ixy>0.000184012</ixy>
+          <ixz>0.000186469</ixz>
+          <iyy>0.0167549</iyy>
+          <iyz>-0.000647332</iyz>
+          <izz>0.00374662</izz>
+        </inertia>
+      </inertial>
+      <collision name='left_upper_forearm_collision'>
+        <pose>0 0 -0.044 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.088</length>
+            <radius>0.06</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='left_upper_forearm_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://baxter_description/meshes/upper_forearm/W0.DAE</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='left_w0' type='revolute'>
+      <child>left_upper_forearm</child>
+      <parent>left_lower_elbow</parent>
+      <axis>
+        <xyz>0.707105 0.707108 4.89671e-12</xyz>
+        <limit>
+          <lower>-3.059</lower>
+          <upper>3.059</upper>
+          <effort>15</effort>
+          <velocity>4</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.7</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='left_lower_forearm'>
+      <pose>0.635163 0.830166 0.320976 -1.5708 -1.66533e-16 0.7854</pose>
+      <inertial>
+        <pose>0.06041 0.00697 0.006 0 -0 0</pose>
+        <mass>1.60979</mass>
+        <inertia>
+          <ixx>0.00387607</ixx>
+          <ixy>-0.000443848</ixy>
+          <ixz>-0.00021115</ixz>
+          <iyy>0.00700538</iyy>
+          <iyz>0.000153481</iyz>
+          <izz>0.00552755</izz>
+        </inertia>
+      </inertial>
+      <collision name='left_lower_forearm_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.06</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='left_lower_forearm_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://baxter_description/meshes/lower_forearm/W1.DAE</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='left_w1' type='revolute'>
+      <child>left_lower_forearm</child>
+      <parent>left_upper_forearm</parent>
+      <axis>
+        <xyz>-0.707108 0.707105 1.46902e-11</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>2.094</upper>
+          <effort>15</effort>
+          <velocity>4</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.7</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='left_wrist'>
+      <pose>0.71717 0.912173 0.320976 -1.89253 1.57079 -1.10713</pose>
+      <inertial>
+        <pose>-0.0124084 -0.00154719 0.132846 0 -0 0</pose>
+        <mass>2.4541</mass>
+        <inertia>
+          <ixx>0.00779071</ixx>
+          <ixy>0.000125243</ixy>
+          <ixz>0.000375481</ixz>
+          <iyy>0.00850047</iyy>
+          <iyz>9.84606e-05</iyz>
+          <izz>0.00259526</izz>
+        </inertia>
+      </inertial>
+      <collision name='left_wrist_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.165</length>
+            <radius>0.06</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name='left_wrist_collision_FT_Top_Plate_left'>
+        <pose>-0.0157498 3.2147e-09 0.157049 7.34644e-06 -7.34641e-06 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://birl_baxter_description/urdf/ft/meshes/FT_Top_Plate.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='left_wrist_collision_FT_bottom_plate_left'>
+        <pose>0.025 0 0.11355 2.06823e-13 -2.06823e-13 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://birl_baxter_description/urdf/ft/meshes/FT_bottom_plate.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='left_wrist_collision_FT_left'>
+        <pose>-0.016625 0.00085087 0.154019 3.14159 -2.0676e-13 -1.57079</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://birl_baxter_description/urdf/ft/meshes/FT.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='left_wrist_collision_left_camera_frame'>
+        <pose>0.02 0 0.169 0 -0 -3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://birl_gripper_description/meshes/male_camera/camera_frame.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>10000</kp>
+              <kd>1</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1000</mu>
+              <mu2>1000</mu2>
+              <fdir1>0 0 1</fdir1>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='left_wrist_collision_left_gripper_base'>
+        <pose>0 0 0.194 1.5708 -2.06823e-13 3.14159</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.029</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name='left_wrist_collision_left_hand'>
+        <pose>0 0 0.1458 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.0464</length>
+            <radius>0.04</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='left_wrist_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://baxter_description/meshes/wrist/W2.DAE</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='left_wrist_visual_FT_Top_Plate_left'>
+        <pose>-0.0157498 3.2147e-09 0.157049 7.34644e-06 -7.34641e-06 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://birl_baxter_description/urdf/ft/meshes/FT_Top_Plate.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='left_wrist_visual_FT_bottom_plate_left'>
+        <pose>0.025 0 0.11355 2.06823e-13 -2.06823e-13 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://birl_baxter_description/urdf/ft/meshes/FT_bottom_plate.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='left_wrist_visual_FT_left'>
+        <pose>-0.016625 0.00085087 0.154019 3.14159 -2.0676e-13 -1.57079</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://birl_baxter_description/urdf/ft/meshes/FT.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='left_wrist_visual_left_camera_frame'>
+        <pose>0.02 0 0.169 0 -0 -3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://birl_gripper_description/meshes/male_camera/camera_frame.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Gold</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='left_wrist_visual_left_gripper_base'>
+        <pose>0 0 0.194 1.5708 -2.06823e-13 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://birl_gripper_description/meshes/electric_gripper/electric_gripper_base.DAE</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='left_wrist_visual_left_hand_accelerometer'>
+        <pose>0.00198 0.000133 0.1544 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.01 0.01 0.01</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name='left_wrist_visual_left_hand_camera'>
+        <pose>0.03825 0.012 0.184355 0 0 -1.5708</pose>
+        <geometry>
+          <cylinder>
+            <length>0.01</length>
+            <radius>0.02</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+      <visual name='left_wrist_visual_left_hand_range'>
+        <pose>0.032 -0.020245 0.1978 -3.14158 -1.57079 1.57078</pose>
+        <geometry>
+          <box>
+            <size>0.005 0.02 0.005</size>
+          </box>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+      <self_collide>1</self_collide>
+    </link>
+    <joint name='left_w2' type='revolute'>
+      <child>left_wrist</child>
+      <parent>left_lower_forearm</parent>
+      <axis>
+        <xyz>0.707105 0.707108 4.89656e-12</xyz>
+        <limit>
+          <lower>-3.059</lower>
+          <upper>3.059</upper>
+          <effort>15</effort>
+          <velocity>4</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.7</damping>
+        </dynamics>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <provide_feedback>1</provide_feedback>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='l_gripper_l_finger'>
+      <pose>0.856116 1.07587 0.320976 -1.89253 1.57079 -1.10713</pose>
+      <inertial>
+        <pose>0 0.00575 0.025 0 -0 3.14159</pose>
+        <mass>0.03</mass>
+        <inertia>
+          <ixx>0.0200395</ixx>
+          <ixy>4.0989e-19</ixy>
+          <ixz>-1.78213e-18</ixz>
+          <iyy>0.0200375</iyy>
+          <iyz>8.625e-06</iyz>
+          <izz>0.020002</izz>
+        </inertia>
+      </inertial>
+      <collision name='l_gripper_l_finger_collision'>
+        <pose>0 0.01725 0.04 0 -0 3.14159</pose>
+        <geometry>
+          <box>
+            <size>0.01 0.0135 0.075</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>100000</kp>
+              <kd>1</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1000</mu>
+              <mu2>1000</mu2>
+              <fdir1>0 0 1</fdir1>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='l_gripper_l_finger_collision_l_gripper_l_finger_1'>
+        <pose>-0.005 -0.003 0.0083 0 -0 3.14159</pose>
+        <geometry>
+          <box>
+            <size>0.01 0.05 0.017</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>100000</kp>
+              <kd>1</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1000</mu>
+              <mu2>1000</mu2>
+              <fdir1>0 0 1</fdir1>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='l_gripper_l_finger_collision_l_gripper_l_finger_tip'>
+        <pose>0 0.01275 0.06 0 -0 -3.14159</pose>
+        <geometry>
+          <box>
+            <size>0.042 0.0065 0.037</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>100000</kp>
+              <kd>1</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1000</mu>
+              <mu2>1000</mu2>
+              <fdir1>0 0 1</fdir1>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='l_gripper_l_finger_visual'>
+        <pose>0 0 0 0 -0 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://rethink_ee_description/meshes/electric_gripper/fingers/standard_narrow.DAE</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='l_gripper_l_finger_visual_l_gripper_l_finger_tip'>
+        <pose>0 0.01725 0.075 0 -0 -3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://rethink_ee_description/meshes/electric_gripper/fingers/paddle_tip.DAE</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='l_gripper_l_finger_joint' type='prismatic'>
+      <child>l_gripper_l_finger</child>
+      <parent>left_wrist</parent>
+      <axis>
+        <xyz>-0.707108 0.707105 1.46904e-11</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0.020833</upper>
+          <effort>20</effort>
+          <velocity>5</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.7</damping>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='l_gripper_r_finger'>
+      <pose>0.880865 1.05112 0.320976 -1.89253 1.57079 -1.10713</pose>
+      <inertial>
+        <pose>0 -0.00575 0.025 0 -0 0</pose>
+        <mass>0.03</mass>
+        <inertia>
+          <ixx>0.0200395</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0200375</iyy>
+          <iyz>8.625e-06</iyz>
+          <izz>0.020002</izz>
+        </inertia>
+      </inertial>
+      <collision name='l_gripper_r_finger_collision'>
+        <pose>0 -0.01725 0.04 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.01 0.0135 0.075</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>100000</kp>
+              <kd>1</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1000</mu>
+              <mu2>1000</mu2>
+              <fdir1>0 0 1</fdir1>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='l_gripper_r_finger_collision_l_gripper_r_finger_1'>
+        <pose>0.005 0.003 0.0083 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.01 0.05 0.017</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>100000</kp>
+              <kd>1</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1000</mu>
+              <mu2>1000</mu2>
+              <fdir1>0 0 1</fdir1>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='l_gripper_r_finger_collision_l_gripper_r_finger_tip'>
+        <pose>0 -0.01275 0.06 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.042 0.0065 0.037</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>100000</kp>
+              <kd>1</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1000</mu>
+              <mu2>1000</mu2>
+              <fdir1>0 0 1</fdir1>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='l_gripper_r_finger_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://rethink_ee_description/meshes/electric_gripper/fingers/standard_narrow.DAE</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='l_gripper_r_finger_visual_l_gripper_r_finger_tip'>
+        <pose>0 -0.01725 0.075 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://rethink_ee_description/meshes/electric_gripper/fingers/paddle_tip.DAE</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='l_gripper_r_finger_joint' type='prismatic'>
+      <child>l_gripper_r_finger</child>
+      <parent>left_wrist</parent>
+      <axis>
+        <xyz>-0.707108 0.707105 1.46904e-11</xyz>
+        <limit>
+          <lower>-0.020833</lower>
+          <upper>0</upper>
+          <effort>20</effort>
+          <velocity>5</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.7</damping>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='right_upper_shoulder'>
+      <pose>0.0640272 -0.259027 0.129626 0 0 -0.7854</pose>
+      <inertial>
+        <pose>0.01783 0.00086 0.19127 0 -0 0</pose>
+        <mass>5.70044</mass>
+        <inertia>
+          <ixx>0.047091</ixx>
+          <ixy>0.000127876</ixy>
+          <ixz>0.0061487</ixz>
+          <iyy>0.0376698</iyy>
+          <iyz>0.000780869</iyz>
+          <izz>0.0359599</izz>
+        </inertia>
+      </inertial>
+      <collision name='right_upper_shoulder_collision'>
+        <pose>0 0 0.1361 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.2722</length>
+            <radius>0.06</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='right_upper_shoulder_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://baxter_description/meshes/upper_shoulder/S0.DAE</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='right_s0' type='revolute'>
+      <child>right_upper_shoulder</child>
+      <parent>base</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.70168</lower>
+          <upper>1.70168</upper>
+          <effort>50</effort>
+          <velocity>1.5</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.7</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='right_lower_shoulder'>
+      <pose>0.112818 -0.307818 0.399976 -1.5708 -0 -0.7854</pose>
+      <inertial>
+        <pose>0.0684512 0.00268992 -0.00528984 0 -0 0</pose>
+        <mass>3.22708</mass>
+        <inertia>
+          <ixx>0.0117521</ixx>
+          <ixy>-0.000300954</ixy>
+          <ixz>0.00207674</ixz>
+          <iyy>0.0278861</iyy>
+          <iyz>-0.000188219</iyz>
+          <izz>0.0207877</izz>
+        </inertia>
+      </inertial>
+      <collision name='right_lower_shoulder_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.12</length>
+            <radius>0.06</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name='right_lower_shoulder_collision_right_upper_elbow_visual'>
+        <pose>0.2435 -6.68382e-13 6.68382e-13 1.5708 -5.55112e-17 1.5708</pose>
+        <geometry>
+          <cylinder>
+            <length>0.273</length>
+            <radius>0.06</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='right_lower_shoulder_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://baxter_description/meshes/lower_shoulder/S1.DAE</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='right_s1' type='revolute'>
+      <child>right_lower_shoulder</child>
+      <parent>right_upper_shoulder</parent>
+      <axis>
+        <xyz>0.707108 0.707105 4.89662e-12</xyz>
+        <limit>
+          <lower>-2.147</lower>
+          <upper>1.047</upper>
+          <effort>50</effort>
+          <velocity>1.5</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.7</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='right_upper_elbow'>
+      <pose>0.184942 -0.379943 0.399976 -2.35618 1.57079 -3.14158</pose>
+      <inertial>
+        <pose>-0.00276 0.00132 0.18086 0 -0 0</pose>
+        <mass>4.31272</mass>
+        <inertia>
+          <ixx>0.0266173</ixx>
+          <ixy>0.000292706</ixy>
+          <ixz>0.0039219</ixz>
+          <iyy>0.0284436</iyy>
+          <iyz>0.00108389</iyz>
+          <izz>0.0124801</izz>
+        </inertia>
+      </inertial>
+      <collision name='right_upper_elbow_collision'>
+        <pose>0 0 -0.0535 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.107</length>
+            <radius>0.06</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='right_upper_elbow_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://baxter_description/meshes/upper_elbow/E0.DAE</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='right_e0' type='revolute'>
+      <child>right_upper_elbow</child>
+      <parent>right_lower_shoulder</parent>
+      <axis>
+        <xyz>0.707105 -0.707108 4.8965e-12</xyz>
+        <limit>
+          <lower>-3.05418</lower>
+          <upper>3.05418</upper>
+          <effort>50</effort>
+          <velocity>1.5</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.7</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='right_lower_elbow'>
+      <pose>0.370501 -0.565502 0.330976 -1.5708 1.66533e-16 -0.7854</pose>
+      <inertial>
+        <pose>0.026113 0.00158992 -0.0111695 0 -0 0</pose>
+        <mass>2.07216</mass>
+        <inertia>
+          <ixx>0.00711585</ixx>
+          <ixy>0.000360372</ixy>
+          <ixz>0.00074588</ixz>
+          <iyy>0.0131827</iyy>
+          <iyz>-0.000196632</iyz>
+          <izz>0.00926891</izz>
+        </inertia>
+      </inertial>
+      <collision name='right_lower_elbow_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.06</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name='right_lower_elbow_collision_right_upper_forearm_visual'>
+        <pose>0.224 -6.6594e-13 6.6594e-13 1.5708 -5.55112e-17 1.5708</pose>
+        <geometry>
+          <cylinder>
+            <length>0.272</length>
+            <radius>0.06</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='right_lower_elbow_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://baxter_description/meshes/lower_elbow/E1.DAE</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='right_e1' type='revolute'>
+      <child>right_lower_elbow</child>
+      <parent>right_upper_elbow</parent>
+      <axis>
+        <xyz>0.707108 0.707105 9.79326e-12</xyz>
+        <limit>
+          <lower>-0.05</lower>
+          <upper>2.618</upper>
+          <effort>50</effort>
+          <velocity>1.5</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.7</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='right_upper_forearm'>
+      <pose>0.44375 -0.638751 0.330976 -2.03443 1.57079 -2.81983</pose>
+      <inertial>
+        <pose>-0.00168244 0.0045998 0.139519 0 -0 0</pose>
+        <mass>2.24675</mass>
+        <inertia>
+          <ixx>0.0166775</ixx>
+          <ixy>0.000184012</ixy>
+          <ixz>0.000186469</ixz>
+          <iyy>0.0167549</iyy>
+          <iyz>-0.000647332</iyz>
+          <izz>0.00374662</izz>
+        </inertia>
+      </inertial>
+      <collision name='right_upper_forearm_collision'>
+        <pose>0 0 -0.044 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.088</length>
+            <radius>0.06</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='right_upper_forearm_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://baxter_description/meshes/upper_forearm/W0.DAE</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='right_w0' type='revolute'>
+      <child>right_upper_forearm</child>
+      <parent>right_lower_elbow</parent>
+      <axis>
+        <xyz>0.707105 -0.707108 4.89653e-12</xyz>
+        <limit>
+          <lower>-3.059</lower>
+          <upper>3.059</upper>
+          <effort>15</effort>
+          <velocity>4</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.7</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='right_lower_forearm'>
+      <pose>0.635163 -0.830166 0.320976 -1.5708 -0 -0.7854</pose>
+      <inertial>
+        <pose>0.06041 0.00697 0.006 0 -0 0</pose>
+        <mass>1.60979</mass>
+        <inertia>
+          <ixx>0.00387607</ixx>
+          <ixy>-0.000443848</ixy>
+          <ixz>-0.00021115</ixz>
+          <iyy>0.00700538</iyy>
+          <iyz>0.000153481</iyz>
+          <izz>0.00552755</izz>
+        </inertia>
+      </inertial>
+      <collision name='right_lower_forearm_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.06</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='right_lower_forearm_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://baxter_description/meshes/lower_forearm/W1.DAE</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='right_w1' type='revolute'>
+      <child>right_lower_forearm</child>
+      <parent>right_upper_forearm</parent>
+      <axis>
+        <xyz>0.707108 0.707105 1.46899e-11</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>2.094</upper>
+          <effort>15</effort>
+          <velocity>4</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.7</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='right_wrist'>
+      <pose>0.71717 -0.912173 0.320976 -1.89254 1.57079 -2.67794</pose>
+      <inertial>
+        <pose>-0.0124084 -0.00154719 0.132846 0 -0 0</pose>
+        <mass>2.4541</mass>
+        <inertia>
+          <ixx>0.00779071</ixx>
+          <ixy>0.000125243</ixy>
+          <ixz>0.000375481</ixz>
+          <iyy>0.00850047</iyy>
+          <iyz>9.84606e-05</iyz>
+          <izz>0.00259526</izz>
+        </inertia>
+      </inertial>
+      <collision name='right_wrist_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.165</length>
+            <radius>0.06</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name='right_wrist_collision_FT_Top_Plate_right'>
+        <pose>-0.0157498 3.2147e-09 0.157049 7.34644e-06 -7.34641e-06 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://birl_baxter_description/urdf/ft/meshes/FT_Top_Plate.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='right_wrist_collision_FT_bottom_plate_right'>
+        <pose>0.025 0 0.11355 2.06823e-13 -2.06823e-13 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://birl_baxter_description/urdf/ft/meshes/FT_bottom_plate.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='right_wrist_collision_FT_right'>
+        <pose>-0.016625 0.00085087 0.154019 3.14159 -2.0676e-13 -1.57079</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://birl_baxter_description/urdf/ft/meshes/FT.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='right_wrist_collision_right_camera_frame'>
+        <pose>0.02 0 0.169 0 -0 -3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://birl_gripper_description/meshes/male_camera/camera_frame.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>10000</kp>
+              <kd>1</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1000</mu>
+              <mu2>1000</mu2>
+              <fdir1>0 0 1</fdir1>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='right_wrist_collision_right_gripper_base'>
+        <pose>0 0 0.194 1.5708 -2.06823e-13 3.14159</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.029</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name='right_wrist_collision_right_hand'>
+        <pose>0 0 0.1458 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.0464</length>
+            <radius>0.04</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='right_wrist_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://baxter_description/meshes/wrist/W2.DAE</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='right_wrist_visual_FT_Top_Plate_right'>
+        <pose>-0.0157498 3.2147e-09 0.157049 7.34644e-06 -7.34641e-06 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://birl_baxter_description/urdf/ft/meshes/FT_Top_Plate.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='right_wrist_visual_FT_bottom_plate_right'>
+        <pose>0.025 0 0.11355 2.06823e-13 -2.06823e-13 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://birl_baxter_description/urdf/ft/meshes/FT_bottom_plate.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='right_wrist_visual_FT_right'>
+        <pose>-0.016625 0.00085087 0.154019 3.14159 -2.0676e-13 -1.57079</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://birl_baxter_description/urdf/ft/meshes/FT.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='right_wrist_visual_right_camera_frame'>
+        <pose>0.02 0 0.169 0 -0 -3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://birl_gripper_description/meshes/male_camera/camera_frame.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Gold</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='right_wrist_visual_right_gripper_base'>
+        <pose>0 0 0.194 1.5708 -2.06823e-13 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://birl_gripper_description/meshes/electric_gripper/electric_gripper_base.DAE</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='right_wrist_visual_right_hand_accelerometer'>
+        <pose>0.00198 0.000133 0.1544 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.01 0.01 0.01</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name='right_wrist_visual_right_hand_camera'>
+        <pose>0.03825 0.012 0.184355 0 0 -1.5708</pose>
+        <geometry>
+          <cylinder>
+            <length>0.01</length>
+            <radius>0.02</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+      <visual name='right_wrist_visual_right_hand_range'>
+        <pose>0.032 -0.020245 0.1978 -3.14158 -1.57079 1.57078</pose>
+        <geometry>
+          <box>
+            <size>0.005 0.02 0.005</size>
+          </box>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+      <self_collide>1</self_collide>
+    </link>
+    <joint name='right_w2' type='revolute'>
+      <child>right_wrist</child>
+      <parent>right_lower_forearm</parent>
+      <axis>
+        <xyz>0.707105 -0.707108 4.89654e-12</xyz>
+        <limit>
+          <lower>-3.059</lower>
+          <upper>3.059</upper>
+          <effort>15</effort>
+          <velocity>4</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.7</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='r_gripper_l_finger'>
+      <pose>0.880865 -1.05112 0.320976 -1.89254 1.57079 -2.67794</pose>
+      <inertial>
+        <pose>0 0.00575 0.025 0 -0 3.14159</pose>
+        <mass>0.03</mass>
+        <inertia>
+          <ixx>0.0200395</ixx>
+          <ixy>4.0989e-19</ixy>
+          <ixz>-1.78213e-18</ixz>
+          <iyy>0.0200375</iyy>
+          <iyz>8.625e-06</iyz>
+          <izz>0.020002</izz>
+        </inertia>
+      </inertial>
+      <collision name='r_gripper_l_finger_collision'>
+        <pose>0 0.01725 0.04 0 -0 3.14159</pose>
+        <geometry>
+          <box>
+            <size>0.01 0.0135 0.075</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>100000</kp>
+              <kd>1</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1000</mu>
+              <mu2>1000</mu2>
+              <fdir1>0 0 1</fdir1>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='r_gripper_l_finger_collision_r_gripper_l_finger_1'>
+        <pose>-0.005 -0.003 0.0083 0 -0 3.14159</pose>
+        <geometry>
+          <box>
+            <size>0.01 0.05 0.017</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>100000</kp>
+              <kd>1</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1000</mu>
+              <mu2>1000</mu2>
+              <fdir1>0 0 1</fdir1>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='r_gripper_l_finger_collision_r_gripper_l_finger_tip'>
+        <pose>0 0.01275 0.06 0 -0 -3.14159</pose>
+        <geometry>
+          <box>
+            <size>0.042 0.0065 0.037</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>100000</kp>
+              <kd>1</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1000</mu>
+              <mu2>1000</mu2>
+              <fdir1>0 0 1</fdir1>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='r_gripper_l_finger_visual'>
+        <pose>0 0 0 0 -0 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://rethink_ee_description/meshes/electric_gripper/fingers/standard_narrow.DAE</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='r_gripper_l_finger_visual_r_gripper_l_finger_tip'>
+        <pose>0 0.01725 0.075 0 -0 -3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://rethink_ee_description/meshes/electric_gripper/fingers/paddle_tip.DAE</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='r_gripper_l_finger_joint' type='prismatic'>
+      <child>r_gripper_l_finger</child>
+      <parent>right_wrist</parent>
+      <axis>
+        <xyz>0.707108 0.707105 1.469e-11</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0.020833</upper>
+          <effort>20</effort>
+          <velocity>5</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.7</damping>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='r_gripper_r_finger'>
+      <pose>0.856116 -1.07587 0.320976 -1.89254 1.57079 -2.67794</pose>
+      <inertial>
+        <pose>0 -0.00575 0.025 0 -0 0</pose>
+        <mass>0.03</mass>
+        <inertia>
+          <ixx>0.0200395</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0200375</iyy>
+          <iyz>8.625e-06</iyz>
+          <izz>0.020002</izz>
+        </inertia>
+      </inertial>
+      <collision name='r_gripper_r_finger_collision'>
+        <pose>0 -0.01725 0.04 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.01 0.0135 0.075</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>100000</kp>
+              <kd>1</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1000</mu>
+              <mu2>1000</mu2>
+              <fdir1>0 0 1</fdir1>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='r_gripper_r_finger_collision_r_gripper_r_finger_1'>
+        <pose>0.005 0.003 0.0083 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.01 0.05 0.017</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>100000</kp>
+              <kd>1</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1000</mu>
+              <mu2>1000</mu2>
+              <fdir1>0 0 1</fdir1>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='r_gripper_r_finger_collision_r_gripper_r_finger_tip'>
+        <pose>0 -0.01275 0.06 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.042 0.0065 0.037</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>100000</kp>
+              <kd>1</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1000</mu>
+              <mu2>1000</mu2>
+              <fdir1>0 0 1</fdir1>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='r_gripper_r_finger_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://rethink_ee_description/meshes/electric_gripper/fingers/standard_narrow.DAE</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='r_gripper_r_finger_visual_r_gripper_r_finger_tip'>
+        <pose>0 -0.01725 0.075 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://rethink_ee_description/meshes/electric_gripper/fingers/paddle_tip.DAE</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='r_gripper_r_finger_joint' type='prismatic'>
+      <child>r_gripper_r_finger</child>
+      <parent>right_wrist</parent>
+      <axis>
+        <xyz>0.707108 0.707105 1.469e-11</xyz>
+        <limit>
+          <lower>-0.020833</lower>
+          <upper>0</upper>
+          <effort>20</effort>
+          <velocity>5</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.7</damping>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <plugin name='ft_sensor_right' filename='libgazebo_ros_ft_sensor.so'>
+      <updateRate>200.0</updateRate>
+      <topicName>wrench/filtered/right</topicName>
+      <jointName>FT_Top_Joint_right</jointName>
+    </plugin>
+    <static>0</static>
+    <plugin name='ft_sensor_left' filename='libgazebo_ros_ft_sensor.so'>
+      <updateRate>200.0</updateRate>
+      <topicName>wrench/filtered/left</topicName>
+      <jointName>left_w2</jointName>
+    </plugin>
+  </model>
+</sdf>
