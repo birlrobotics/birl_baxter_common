@@ -136,7 +136,7 @@
   </link>
   <joint
       name="FT_Top_Joint_left"
-      type="fixed">
+      type="revolute">
     <origin
         xyz="0.00085087 -0.00087515 -0.0030305"
         rpy="3.1416 5.017E-16 1.5708" />
@@ -148,12 +148,9 @@
         xyz = "0 0 1"/>
     <limit
         lower = "0"
-        upper = "0.0006"
-        velocity = "0.001"
-        effort = "0.001"/>
-    <dynamics
-        damping = "1000"
-        friction = "2"/>
+        upper = "0"
+        velocity = "0.2"
+        effort = "0.2"/>
   </joint>
   <gazebo reference="FT_left">
     <material>Gazebo/Skull</material>
