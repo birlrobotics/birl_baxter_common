@@ -154,6 +154,6 @@
   </joint>
   
   <gazebo reference="FT_right">
-    <material>Gazebo/Skull</material>
+    <material>Gazebo/Grey</material>
   </gazebo>
 </robot>
