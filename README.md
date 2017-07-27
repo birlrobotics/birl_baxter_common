@@ -15,7 +15,7 @@ New features for baxter simulation environment compared to the default one:
   -  WACOH force torque sensor and its design
   -  A in-house designed plastic camera gripper holder used for a camera snap assembly task
 
-For more details, you can click: [New Feature documentation](https://github.com/birlrobotics/birl_baxter_common/wiki/New-Features-documentation)
+For more details, you can click: [New Feature documentation](https://github.com/birlrobotics/birl_baxter_simulator/wiki/New-Features-documentation)
 
 # Dependencies
 
