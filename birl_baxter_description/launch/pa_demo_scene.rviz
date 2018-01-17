@@ -8,7 +8,7 @@ Panels:
         - /Status1
         - /TF1
       Splitter Ratio: 0.5
-    Tree Height: 775
+    Tree Height: 753
   - Class: rviz/Selection
     Name: Selection
   - Class: rviz/Tool Properties
@@ -74,26 +74,11 @@ Visualization Manager:
           Show Trail: false
           Value: true
         Link Tree Style: Links in Alphabetic Order
-        asus_xtion:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         base:
           Alpha: 1
           Show Axes: false
           Show Trail: false
         box_female:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        box_male:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        camera_base:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -126,11 +111,6 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        install_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         l_gripper_l_finger:
           Alpha: 1
           Show Axes: false
@@ -159,11 +139,6 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        left_camera_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         left_gripper:
           Alpha: 1
           Show Axes: false
@@ -212,15 +187,6 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        left_male_holder:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        left_pa_gripper:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
         left_torso_itb:
           Alpha: 1
           Show Axes: false
@@ -288,11 +254,6 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        right_camera_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         right_gripper:
           Alpha: 1
           Show Axes: false
@@ -341,15 +302,6 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        right_male_holder:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        right_pa_gripper:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
         right_torso_itb:
           Alpha: 1
           Show Axes: false
@@ -390,11 +342,6 @@ Visualization Manager:
           Show Trail: false
           Value: true
         sonar_ring:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        table:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -421,15 +368,9 @@ Visualization Manager:
           Value: true
         FT_right:
           Value: true
-        asus_xtion:
-          Value: true
         base:
           Value: true
         box_female:
-          Value: true
-        box_male:
-          Value: true
-        camera_base:
           Value: true
         collision_head_link_1:
           Value: true
@@ -443,8 +384,6 @@ Visualization Manager:
           Value: true
         head_camera:
           Value: true
-        install_link:
-          Value: true
         l_gripper_l_finger:
           Value: true
         l_gripper_l_finger_tip:
@@ -456,8 +395,6 @@ Visualization Manager:
         left_arm_itb:
           Value: true
         left_arm_mount:
-          Value: true
-        left_camera_frame:
           Value: true
         left_gripper:
           Value: true
@@ -478,10 +415,6 @@ Visualization Manager:
         left_lower_forearm:
           Value: true
         left_lower_shoulder:
-          Value: true
-        left_male_holder:
-          Value: true
-        left_pa_gripper:
           Value: true
         left_torso_itb:
           Value: true
@@ -511,8 +444,6 @@ Visualization Manager:
           Value: true
         right_arm_mount:
           Value: true
-        right_camera_frame:
-          Value: true
         right_gripper:
           Value: true
         right_gripper_base:
@@ -533,10 +464,6 @@ Visualization Manager:
           Value: true
         right_lower_shoulder:
           Value: true
-        right_male_holder:
-          Value: true
-        right_pa_gripper:
-          Value: true
         right_torso_itb:
           Value: true
         right_upper_elbow:
@@ -555,28 +482,20 @@ Visualization Manager:
           Value: true
         sonar_ring:
           Value: true
-        table:
-          Value: true
         torso:
           Value: true
       Marker Scale: 0.25
       Name: TF
-      Show Arrows: true
-      Show Axes: true
+      Show Arrows: false
+      Show Axes: false
       Show Names: false
       Tree:
         base:
           box_female:
             {}
-          camera_base:
-            install_link:
-              asus_xtion:
-                {}
           collision_head_link_1:
             {}
           collision_head_link_2:
-            {}
-          table:
             {}
           torso:
             head:
@@ -598,9 +517,6 @@ Visualization Manager:
                         left_lower_forearm:
                           left_wrist:
                             left_hand:
-                              left_camera_frame:
-                                left_male_holder:
-                                  {}
                               left_gripper_base:
                                 l_gripper_l_finger:
                                   l_gripper_l_finger_tip:
@@ -609,8 +525,6 @@ Visualization Manager:
                                   l_gripper_r_finger_tip:
                                     {}
                                 left_gripper:
-                                  {}
-                                left_pa_gripper:
                                   {}
                               left_hand_accelerometer:
                                 {}
@@ -643,10 +557,6 @@ Visualization Manager:
                                 FT_Top_Plate_right:
                                   {}
                             right_hand:
-                              right_camera_frame:
-                                right_male_holder:
-                                  box_male:
-                                    {}
                               right_gripper_base:
                                 r_gripper_l_finger:
                                   r_gripper_l_finger_tip:
@@ -655,8 +565,6 @@ Visualization Manager:
                                   r_gripper_r_finger_tip:
                                     {}
                                 right_gripper:
-                                  {}
-                                right_pa_gripper:
                                   {}
                               right_hand_accelerometer:
                                 {}
@@ -700,7 +608,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 1.76036
+      Distance: 0.915621
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
@@ -712,18 +620,18 @@ Visualization Manager:
         Z: 0.0670076
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.465398
+      Pitch: 0.650398
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 4.62857
+      Yaw: 4.54357
     Saved: ~
 Window Geometry:
   Displays:
     collapsed: false
-  Height: 1056
+  Height: 1034
   Hide Left Dock: false
   Hide Right Dock: false
-  QMainWindow State: 000000ff00000000fd00000004000000000000016a00000396fc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000006400fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000002800000396000000dd00fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000010f00000396fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073010000002800000396000000b000fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e100000197000000030000073f0000003efc0100000002fb0000000800540069006d006501000000000000073f000002f600fffffffb0000000800540069006d00650100000000000004500000000000000000000004ba0000039600000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd00000004000000000000016a00000380fc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000006400fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000002800000380000000dd00fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000010f00000380fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073010000002800000380000000b000fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e100000197000000030000073f0000003efc0100000002fb0000000800540069006d006501000000000000073f000002f600fffffffb0000000800540069006d00650100000000000004500000000000000000000004ba0000038000000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Time:
@@ -733,5 +641,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1855
-  X: 65
-  Y: 24
+  X: 173
+  Y: 73
