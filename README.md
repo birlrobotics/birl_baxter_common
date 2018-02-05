@@ -105,3 +105,11 @@ Basically, if you don't want to dig deeper, you can just change the default valu
  # Links for learning URDF
  [URDF wiki](http://wiki.ros.org/urdf/Tutorials)  
 
+# TUTORIAL
+launch rviz
+
+`roslaunch birl_baxter_description baxter_ft_rviz.launch `
+
+launch gazebo
+
+`roslaunch birl_baxter_description baxter_ft_gazebo.launch`
