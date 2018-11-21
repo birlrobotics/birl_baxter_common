@@ -4,13 +4,12 @@
   <xacro:arg name="gazebo" default="false"/>
   <xacro:arg name="pedestal" default="true"/>
   <!-- TODO: have an arg for pa_demo that sets correct eef's/table/xtion -->
-  <xacro:arg name="table" default="false"/>
+  <xacro:arg name="table" default="true"/>
   <xacro:arg name="asus_xtion" default="false"/>
   <xacro:arg name="right_camera_frame" default="false"/>
   <xacro:arg name="left_camera_frame" default="false"/>
   <xacro:arg name="left_male_holder" default="false"/>  
   <xacro:arg name="right_male_holder" default="false"/>
-
 
     <!--options:
       

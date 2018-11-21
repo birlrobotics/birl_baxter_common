@@ -219,7 +219,7 @@
     <!-- Electric Gripper Base Joint -->
     <joint name="${side}_gripper_base" type="fixed">
       <origin rpy="0 0 0" xyz="0 0 0.025"/>
-      <parent link="${side}_hand"/>
+      <parent link="FT_Top_Plate_${side}"/>
       <child link="${side}_gripper_base"/>
     </joint>
 

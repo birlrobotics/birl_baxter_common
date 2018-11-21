@@ -5,7 +5,6 @@
   <xacro:arg name="right_ft_sensor" default="true"/>
  <!-- <xacro:property name="pi" value="3.1415926"/>-->
 
-  
   <xacro:if value="$(arg gazebo)">
     <!-- Gazebo Tags -->
     <xacro:include filename="$(find birl_baxter_description)/urdf/baxter_element/baxter_base/baxter_base_pa.gazebo.xacro" />
@@ -590,14 +589,14 @@
     <limit effort="15.0" lower="-3.059" upper="3.059" velocity="4.0"/>
     <dynamics damping="0.7" friction="0.0"/>
   </joint>
-  <!--
+  
   <joint name="right_hand" type="fixed">
     <origin rpy="0 0 0" xyz="0 0 0.11355"/>
     <axis xyz="0 0 1"/>
     <parent link="right_wrist"/>
     <child link="right_hand"/>
     </joint>
-    -->
+    
   <joint name="right_hand_camera" type="fixed">
     <origin rpy="0 0 -1.57079633" xyz="0.03825 0.012 0.015355"/>
     <parent link="right_hand"/>
@@ -960,14 +959,14 @@
     <limit effort="15.0" lower="-3.059" upper="3.059" velocity="4.0"/>
     <dynamics damping="0.7" friction="0.0"/>
   </joint>
-  <!--
+  
   <joint name="left_hand" type="fixed">
     <origin rpy="0 0 0" xyz="0 0 0.11355"/>
     <axis xyz="0 0 1"/>
     <parent link="left_wrist"/>
     <child link="left_hand"/>
     </joint>
-    -->
+    
   <joint name="left_hand_camera" type="fixed">
     <origin rpy="0 0 -1.57079633" xyz="0.03825 0.012 0.015355"/>
     <parent link="left_hand"/>
@@ -990,27 +989,15 @@
   </joint>
 
 
-
-
-  
-  
   <xacro:if value="$(arg right_ft_sensor)">
     <!-- change compared to baxter_base.urdf.xacro -->
-    
-    <joint name="right_hand" type="fixed">
-      <origin rpy="0 0 0" xyz="0 0 0.169"/>
-      <axis xyz="0 0 1"/>
-      <parent link="right_wrist"/>
-      <child link="right_hand"/>
-    </joint>
 
-    <xacro:include filename="$(find birl_baxter_description)/urdf/ft/robots/FT_Electric_right.URDF"/>
+    <xacro:include filename="$(find birl_baxter_description)/urdf/ft/robots/FT_Electric_right.URDF">
+    </xacro:include>
 
-
-    
-    <joint name="right_ft_hand" type="fixed">
-      <origin rpy="${pi} ${pi} 0" xyz="0.025 0 0.11355"/>
-      <parent link="right_wrist"/>
+    <joint name="r_ft_bottom_hand" type="fixed">
+      <origin rpy="${pi} ${pi} 0" xyz="0.02 0 0"/>
+      <parent link="right_hand"/>
       <child link="FT_bottom_plate_right"/>
     </joint>
 
@@ -1025,42 +1012,19 @@
         <jointName>FT_Top_Joint_right</jointName>
       </plugin>
     </gazebo>
-
+<!--ft sensor library link-->
   </xacro:if>  
-  
-  <xacro:unless value="$(arg right_ft_sensor)">
-    <joint name="right_hand" type="fixed">
-      <origin rpy="0 0 0" xyz="0 0 0.11355"/>
-      <axis xyz="0 0 1"/>
-      <parent link="right_wrist"/>
-      <child link="right_hand"/>
-    </joint>    
-  </xacro:unless>
+<!--# end xacro if -->
 
+  <xacro:if value="$(arg left_ft_sensor)">
 
+    <xacro:include filename="$(find birl_baxter_description)/urdf/ft/robots/FT_Electric_left.URDF">
+    </xacro:include>
 
-
-
-  
-
-   <xacro:if value="$(arg left_ft_sensor)">
-    <!-- change compared to baxter_base.urdf.xacro -->
-    
-    <joint name="left_hand" type="fixed">
-      <origin rpy="0 0 0" xyz="0 0 0.169"/>
-      <axis xyz="0 0 1"/>
-      <parent link="left_wrist"/>
-      <child link="left_hand"/>
-    </joint>
-
-    <xacro:include filename="$(find birl_baxter_description)/urdf/ft/robots/FT_Electric_left.URDF"/>
-
-
-    
-    <joint name="left_ft_hand" type="fixed">
-      <origin rpy="${pi} ${pi} 0" xyz="0.025 0 0.11355"/>
-      <parent link="left_wrist"/>
-      <child link="FT_bottom_plate_left"/>
+    <joint name="l_ft_bottom_hand" type="fixed">
+        <origin rpy="${pi} ${pi} 0" xyz="0.02 0 0"/>
+        <parent link="left_hand"/>
+        <child link="FT_bottom_plate_left"/>
     </joint>
 
     <gazebo reference="FT_Top_Joint_left">
@@ -1074,16 +1038,6 @@
         <jointName>FT_Top_Joint_left</jointName>
       </plugin>
     </gazebo>
+  </xacro:if> 
 
-  </xacro:if>  
-  
-  <xacro:unless value="$(arg left_ft_sensor)">
-    <joint name="left_hand" type="fixed">
-      <origin rpy="0 0 0" xyz="0 0 0.11355"/>
-      <axis xyz="0 0 1"/>
-      <parent link="left_wrist"/>
-      <child link="left_hand"/>
-    </joint>    
-  </xacro:unless>
-  
 </robot>

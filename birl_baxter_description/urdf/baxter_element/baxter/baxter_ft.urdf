@@ -585,12 +585,14 @@
     <limit effort="15.0" lower="-3.059" upper="3.059" velocity="4.0"/>
     <dynamics damping="0.7" friction="0.0"/>
   </joint>
+  <!--
   <joint name="right_hand" type="fixed">
     <origin rpy="0 0 0" xyz="0 0 0.11355"/>
     <axis xyz="0 0 1"/>
     <parent link="right_wrist"/>
     <child link="right_hand"/>
-  </joint>
+    </joint>
+    -->
   <joint name="right_hand_camera" type="fixed">
     <origin rpy="0 0 -1.57079633" xyz="0.03825 0.012 0.015355"/>
     <parent link="right_hand"/>
@@ -953,12 +955,14 @@
     <limit effort="15.0" lower="-3.059" upper="3.059" velocity="4.0"/>
     <dynamics damping="0.7" friction="0.0"/>
   </joint>
+  <!--
   <joint name="left_hand" type="fixed">
     <origin rpy="0 0 0" xyz="0 0 0.11355"/>
     <axis xyz="0 0 1"/>
     <parent link="left_wrist"/>
     <child link="left_hand"/>
-  </joint>
+    </joint>
+    -->
   <joint name="left_hand_camera" type="fixed">
     <origin rpy="0 0 -1.57079633" xyz="0.03825 0.012 0.015355"/>
     <parent link="left_hand"/>
@@ -980,6 +984,12 @@
     <child link="left_hand_accelerometer"/>
   </joint>
   <!-- change compared to baxter_base.urdf.xacro -->
+  <joint name="right_hand" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0.169"/>
+    <axis xyz="0 0 1"/>
+    <parent link="right_wrist"/>
+    <child link="right_hand"/>
+  </joint>
   <link name="FT_bottom_plate_right">
     <inertial>
       <origin rpy="0 0 0" xyz="0.034783 -1.3323E-15 0.0055211"/>
@@ -1062,9 +1072,9 @@
   <gazebo reference="FT_right">
     <material>Gazebo/Grey</material>
   </gazebo>
-  <joint name="r_ft_bottom_hand" type="fixed">
-    <origin rpy="3.14159265359 3.14159265359 0" xyz="0.02 0 0"/>
-    <parent link="right_hand"/>
+  <joint name="right_ft_hand" type="fixed">
+    <origin rpy="3.14159265359 3.14159265359 0" xyz="0.025 0 0.11355"/>
+    <parent link="right_wrist"/>
     <child link="FT_bottom_plate_right"/>
   </joint>
   <gazebo reference="FT_Top_Joint_right">
@@ -1077,8 +1087,13 @@
       <jointName>FT_Top_Joint_right</jointName>
     </plugin>
   </gazebo>
-  <!--ft sensor library link-->
-  <!--# end xacro if -->
+  <!-- change compared to baxter_base.urdf.xacro -->
+  <joint name="left_hand" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0.169"/>
+    <axis xyz="0 0 1"/>
+    <parent link="left_wrist"/>
+    <child link="left_hand"/>
+  </joint>
   <link name="FT_bottom_plate_left">
     <inertial>
       <origin rpy="0 0 0" xyz="0.034783 -1.3323E-15 0.0055211"/>
@@ -1161,9 +1176,9 @@
   <gazebo reference="FT_left">
     <material>Gazebo/Grey</material>
   </gazebo>
-  <joint name="l_ft_bottom_hand" type="fixed">
-    <origin rpy="3.14159265359 3.14159265359 0" xyz="0.02 0 0"/>
-    <parent link="left_hand"/>
+  <joint name="left_ft_hand" type="fixed">
+    <origin rpy="3.14159265359 3.14159265359 0" xyz="0.025 0 0.11355"/>
+    <parent link="left_wrist"/>
     <child link="FT_bottom_plate_left"/>
   </joint>
   <gazebo reference="FT_Top_Joint_left">
@@ -1203,13 +1218,12 @@
     <parent link="torso"/>
     <child link="pedestal"/>
   </joint>
-  <!-- Left End Effector -->
   <!-- Base of end effector -->
   <link name="left_gripper_base">
     <visual>
       <origin rpy="-1.57079632679 3.14159265359 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://birl_gripper_description/meshes/electric_gripper/electric_gripper_base.DAE"/>
+        <mesh filename="package://rethink_ee_description/meshes/electric_gripper/electric_gripper_base.DAE"/>
       </geometry>
     </visual>
     <collision>
@@ -1227,39 +1241,17 @@
       <inertia ixx="2e-08" ixy="0" ixz="0" iyy="3e-08" iyz="0" izz="2e-08"/>
     </inertial>
   </link>
-  <!--camera frame  -->
-  <!--        <link name="${side}_gripper_base1">
-          <visual>
-            <origin rpy="0 0 0" xyz="0 0 0"/>
-            <geometry>
-              <mesh filename="package://birl_gripper_description/meshes/electric_gripper/electric_gripper_base.dae"/>
-            </geometry>
-          </visual>
-          <collision>
-            <origin rpy="0 0 0" xyz="0.0 0.0 0"/>
-            <geometry>
-              <mesh filename="package://birl_gripper_description/meshes/electric_gripper/electric_pa_gripper_base.stl"/>
-
-            </geometry>
-          </collision>
-          <inertial>
-            <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
-            <mass value="0.3"/>
-            <inertia ixx="2e-08" ixy="0" ixz="0" iyy="3e-08" iyz="0" izz="2e-08"/>
-          </inertial>
-        </link>
--->
   <link name="l_gripper_l_finger">
     <visual>
       <origin rpy="0 0 -3.14159265359" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://rethink_ee_description/meshes/electric_gripper/fingers/standard_narrow.DAE"/>
+        <mesh filename="package://rethink_ee_description/meshes/electric_gripper/fingers/extended_narrow.DAE"/>
       </geometry>
     </visual>
     <collision>
-      <origin rpy="0 0 -3.14159265359" xyz="0 0.01725 0.04"/>
+      <origin rpy="0 0 -3.14159265359" xyz="0 0.01725 0.0615"/>
       <geometry>
-        <box size="0.01 0.0135 0.075"/>
+        <box size="0.01 0.0135 0.1127"/>
       </geometry>
     </collision>
     <collision>
@@ -1285,13 +1277,13 @@
     <visual>
       <origin rpy="0 0 3.14159265359" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://rethink_ee_description/meshes/electric_gripper/fingers/basic_hard_tip.DAE"/>
+        <mesh filename="package://rethink_ee_description/meshes/electric_gripper/fingers/paddle_tip.DAE"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="0 -0.0045 -0.015"/>
       <geometry>
-        <box size="0.016 0.0065 0.037"/>
+        <box size="0.042 0.0065 0.037"/>
       </geometry>
     </collision>
     <inertial>
@@ -1301,7 +1293,7 @@
     </inertial>
   </link>
   <joint name="l_gripper_l_finger_tip_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0.0 0.01725 0.075"/>
+    <origin rpy="0 0 0" xyz="0.0 0.01725 0.1127"/>
     <parent link="l_gripper_l_finger"/>
     <child link="l_gripper_l_finger_tip"/>
   </joint>
@@ -1309,13 +1301,13 @@
     <visual>
       <origin rpy="0 0 -0.0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://rethink_ee_description/meshes/electric_gripper/fingers/standard_narrow.DAE"/>
+        <mesh filename="package://rethink_ee_description/meshes/electric_gripper/fingers/extended_narrow.DAE"/>
       </geometry>
     </visual>
     <collision>
-      <origin rpy="0 0 -0.0" xyz="0 -0.01725 0.04"/>
+      <origin rpy="0 0 -0.0" xyz="0 -0.01725 0.0615"/>
       <geometry>
-        <box size="0.01 0.0135 0.075"/>
+        <box size="0.01 0.0135 0.1127"/>
       </geometry>
     </collision>
     <collision>
@@ -1341,13 +1333,13 @@
     <visual>
       <origin rpy="0 0 0.0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://rethink_ee_description/meshes/electric_gripper/fingers/basic_hard_tip.DAE"/>
+        <mesh filename="package://rethink_ee_description/meshes/electric_gripper/fingers/paddle_tip.DAE"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0.0" xyz="0 0.0045 -0.015"/>
       <geometry>
-        <box size="0.016 0.0065 0.037"/>
+        <box size="0.042 0.0065 0.037"/>
       </geometry>
     </collision>
     <inertial>
@@ -1357,19 +1349,19 @@
     </inertial>
   </link>
   <joint name="l_gripper_r_finger_tip_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0.0 -0.01725 0.075"/>
+    <origin rpy="0 0 0" xyz="0.0 -0.01725 0.1127"/>
     <parent link="l_gripper_r_finger"/>
     <child link="l_gripper_r_finger_tip"/>
   </joint>
   <!-- Electric Gripper Base Joint -->
   <joint name="left_gripper_base" type="fixed">
     <origin rpy="0 0 0" xyz="0 0 0.025"/>
-    <parent link="FT_Top_Plate_left"/>
+    <parent link="left_hand"/>
     <child link="left_gripper_base"/>
   </joint>
   <!-- Electric Gripper Tip joint -->
   <joint name="left_endpoint" type="fixed">
-    <origin rpy="0 0 0" xyz="0 0 0.095"/>
+    <origin rpy="0 0 0" xyz="0 0 0.1327"/>
     <parent link="left_gripper_base"/>
     <child link="left_gripper"/>
   </joint>
@@ -1401,20 +1393,20 @@
   <transmission name="gripper_left1">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="l_gripper_r_finger_joint">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="gripper_l1_motor1">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
   <transmission name="gripper_left2">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="l_gripper_l_finger_joint">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="gripper_l1_motor2">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -1429,7 +1421,7 @@
     <visual>
       <origin rpy="-1.57079632679 3.14159265359 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://birl_gripper_description/meshes/electric_gripper/electric_gripper_base.DAE"/>
+        <mesh filename="package://rethink_ee_description/meshes/electric_gripper/electric_gripper_base.DAE"/>
       </geometry>
     </visual>
     <collision>
@@ -1447,45 +1439,23 @@
       <inertia ixx="2e-08" ixy="0" ixz="0" iyy="3e-08" iyz="0" izz="2e-08"/>
     </inertial>
   </link>
-  <!--camera frame  -->
-  <!--        <link name="${side}_gripper_base1">
-          <visual>
-            <origin rpy="0 0 0" xyz="0 0 0"/>
-            <geometry>
-              <mesh filename="package://birl_gripper_description/meshes/electric_gripper/electric_gripper_base.dae"/>
-            </geometry>
-          </visual>
-          <collision>
-            <origin rpy="0 0 0" xyz="0.0 0.0 0"/>
-            <geometry>
-              <mesh filename="package://birl_gripper_description/meshes/electric_gripper/electric_pa_gripper_base.stl"/>
-
-            </geometry>
-          </collision>
-          <inertial>
-            <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
-            <mass value="0.3"/>
-            <inertia ixx="2e-08" ixy="0" ixz="0" iyy="3e-08" iyz="0" izz="2e-08"/>
-          </inertial>
-        </link>
--->
   <link name="r_gripper_l_finger">
     <visual>
       <origin rpy="0 0 -3.14159265359" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://rethink_ee_description/meshes/electric_gripper/fingers/extended_wide.DAE"/>
+        <mesh filename="package://rethink_ee_description/meshes/electric_gripper/fingers/extended_narrow.DAE"/>
       </geometry>
     </visual>
     <collision>
-      <origin rpy="0 0 -3.14159265359" xyz="0 0.05503 0.0615"/>
+      <origin rpy="0 0 -3.14159265359" xyz="0 0.01725 0.0615"/>
       <geometry>
         <box size="0.01 0.0135 0.1127"/>
       </geometry>
     </collision>
     <collision>
-      <origin rpy="0 0 -3.14159265359" xyz="-0.005 0.016 0.0083"/>
+      <origin rpy="0 0 -3.14159265359" xyz="-0.005 -0.003 0.0083"/>
       <geometry>
-        <box size="0.01 0.08778 0.017"/>
+        <box size="0.01 0.05 0.017"/>
       </geometry>
     </collision>
     <inertial>
@@ -1505,13 +1475,13 @@
     <visual>
       <origin rpy="0 0 3.14159265359" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://rethink_ee_description/meshes/electric_gripper/fingers/basic_hard_tip.DAE"/>
+        <mesh filename="package://rethink_ee_description/meshes/electric_gripper/fingers/paddle_tip.DAE"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="0 -0.0045 -0.015"/>
       <geometry>
-        <box size="0.016 0.0065 0.037"/>
+        <box size="0.042 0.0065 0.037"/>
       </geometry>
     </collision>
     <inertial>
@@ -1521,7 +1491,7 @@
     </inertial>
   </link>
   <joint name="r_gripper_l_finger_tip_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0.0 0.05503 0.1127"/>
+    <origin rpy="0 0 0" xyz="0.0 0.01725 0.1127"/>
     <parent link="r_gripper_l_finger"/>
     <child link="r_gripper_l_finger_tip"/>
   </joint>
@@ -1529,19 +1499,19 @@
     <visual>
       <origin rpy="0 0 -0.0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://rethink_ee_description/meshes/electric_gripper/fingers/extended_wide.DAE"/>
+        <mesh filename="package://rethink_ee_description/meshes/electric_gripper/fingers/extended_narrow.DAE"/>
       </geometry>
     </visual>
     <collision>
-      <origin rpy="0 0 -0.0" xyz="0 -0.05503 0.0615"/>
+      <origin rpy="0 0 -0.0" xyz="0 -0.01725 0.0615"/>
       <geometry>
         <box size="0.01 0.0135 0.1127"/>
       </geometry>
     </collision>
     <collision>
-      <origin rpy="0 0 -0.0" xyz="0.005 -0.016 0.0083"/>
+      <origin rpy="0 0 -0.0" xyz="0.005 0.003 0.0083"/>
       <geometry>
-        <box size="0.01 0.08778 0.017"/>
+        <box size="0.01 0.05 0.017"/>
       </geometry>
     </collision>
     <inertial>
@@ -1561,13 +1531,13 @@
     <visual>
       <origin rpy="0 0 0.0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://rethink_ee_description/meshes/electric_gripper/fingers/basic_hard_tip.DAE"/>
+        <mesh filename="package://rethink_ee_description/meshes/electric_gripper/fingers/paddle_tip.DAE"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0.0" xyz="0 0.0045 -0.015"/>
       <geometry>
-        <box size="0.016 0.0065 0.037"/>
+        <box size="0.042 0.0065 0.037"/>
       </geometry>
     </collision>
     <inertial>
@@ -1577,14 +1547,14 @@
     </inertial>
   </link>
   <joint name="r_gripper_r_finger_tip_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0.0 -0.05503 0.1127"/>
+    <origin rpy="0 0 0" xyz="0.0 -0.01725 0.1127"/>
     <parent link="r_gripper_r_finger"/>
     <child link="r_gripper_r_finger_tip"/>
   </joint>
   <!-- Electric Gripper Base Joint -->
   <joint name="right_gripper_base" type="fixed">
     <origin rpy="0 0 0" xyz="0 0 0.025"/>
-    <parent link="FT_Top_Plate_right"/>
+    <parent link="right_hand"/>
     <child link="right_gripper_base"/>
   </joint>
   <!-- Electric Gripper Tip joint -->
@@ -1621,20 +1591,20 @@
   <transmission name="gripper_right1">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="r_gripper_r_finger_joint">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="gripper_r1_motor1">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
   <transmission name="gripper_right2">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="r_gripper_l_finger_joint">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="gripper_r1_motor2">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -1644,41 +1614,19 @@
   <gazebo reference="r_gripper_l_finger_joint">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
-  <link name="table">
-    <visual>
-      <origin rpy="0 0 0" xyz="0.6 0 0"/>
-      <geometry>
-        <mesh filename="package://birl_baxter_description/meshes/table/table.dae"/>
-      </geometry>
-    </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="0.6 0 0"/>
-      <geometry>
-        <mesh filename="package://birl_baxter_description/meshes/table/table.stl"/>
-      </geometry>
-    </collision>
-    <inertial>
-      <origin rpy="0 0 0" xyz="0.6 0 0"/>
-      <mass value="60.86397744"/>
-      <inertia ixx="5.0635929" ixy="0.00103417" ixz="0.80199628" iyy="6.08689388" iyz="0.00105311" izz="4.96191932"/>
-    </inertial>
-  </link>
-  <!-- <joint name="table_fixed" type="fixed">
-    <origin rpy="0 0 0" xyz="0.0 0.0 -0.93"/>
-    <parent link="base"/>
-    <child link="table"/>
-  </joint>-->
-  <gazebo reference="table">
-    <self_collide>1</self_collide>
-    <mu1>1000000</mu1>
-    <mu2>1000000</mu2>
-    <fdir1>0.0 0.0 1.0</fdir1>
-    <kp>1e5</kp>
-    <kd>1.0</kd>
+  <!-- Ft sensor plugin. warning:the reference joint which is defined as fixed  can not be selected. So in this case left_w2 is a revolute type in urdf!  -->
+  <!--
+  <gazebo reference="FT_Top_Joint">
+    <provideFeedback>true</provideFeedback>
   </gazebo>
-  <joint name="table_fixed" type="fixed">
-    <origin rpy="0 0 0" xyz="0.0 0.0 -0.93"/>
-    <parent link="base"/>
-    <child link="table"/>
-  </joint>
+
+
+  <gazebo>
+    <plugin name="ft_sensor" filename="libgazebo_ros_ft_sensor.so">
+      <updateRate>10.0</updateRate>
+      <topicName>ft_sensor_topic</topicName>
+      <jointName>FT_Top_Joint</jointName>
+    </plugin>
+  </gazebo>
+-->
 </robot>
