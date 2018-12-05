@@ -4,7 +4,9 @@
   <xacro:arg name="gazebo" default="false"/>
   <xacro:arg name="pedestal" default="true"/>
   <!-- TODO: have an arg for pa_demo that sets correct eef's/table/xtion -->
-  <xacro:arg name="table" default="true"/>
+  <xacro:arg name="table_front" default="true"/>
+  <xacro:arg name="table_right_side" default="true"/>
+  <xacro:arg name="container" default="false"/>
   <xacro:arg name="asus_xtion" default="false"/>
   <xacro:arg name="right_camera_frame" default="false"/>
   <xacro:arg name="left_camera_frame" default="false"/>
@@ -17,13 +19,13 @@
       finger_slot = 1-6
       fing_tip = basic_hard_tip basic_soft_tip half_round_tip paddle_tip none-->
   <xacro:arg name="l_finger"       default="standard_narrow"/>
-  <xacro:arg name="l_finger_slot"  default="2"/>   
-  <xacro:arg name="l_finger_tip"   default="basic_hard_tip"/>
+  <xacro:arg name="l_finger_slot"  default="5"/>   
+  <xacro:arg name="l_finger_tip"   default="paddle_tip"/>
   <xacro:arg name="l_finger_grasp" default="inner"/>
   
-  <xacro:arg name="r_finger"       default="extended_wide"/>
-  <xacro:arg name="r_finger_slot"  default="2"/>   
-  <xacro:arg name="r_finger_tip"   default="basic_hard_tip"/>
+  <xacro:arg name="r_finger"       default="standard_narrow"/>
+  <xacro:arg name="r_finger_slot"  default="5"/>   
+  <xacro:arg name="r_finger_tip"   default="paddle_tip"/>
   <xacro:arg name="r_finger_grasp" default="inner"/>
 
   <xacro:arg name="left_ft_sensor" default="true"/>
@@ -65,14 +67,35 @@
       <xacro:arg name="r_finger_grasp" default="$(r_finger_grasp)"/>
     </xacro:include>
 
-  <!-- Table -->
-  <xacro:if value="$(arg table)">
-    <xacro:include filename="$(find birl_baxter_description)/urdf/table/table.xacro">
+  <!-- Container -->
+  <xacro:if value="$(arg container)">
+    <xacro:include filename="$(find birl_baxter_description)/urdf/box/container/container.xacro">
     </xacro:include>
-    <joint name="table_fixed" type="fixed">
+    <joint name="container_fixed" type="fixed">
+      <origin rpy="0 0 -1.57" xyz="0.0 0.0 -0.93"/>
+      <parent link="base"/>
+      <child link="container"/>
+    </joint>
+  </xacro:if>
+
+  <!-- Table -->
+  <xacro:if value="$(arg table_front)">
+    <xacro:include filename="$(find birl_baxter_description)/urdf/table/table_front.xacro">
+    </xacro:include>
+    <joint name="table_fixed_1" type="fixed">
       <origin rpy="0 0 0" xyz="0.0 0.0 -0.93"/>
       <parent link="base"/>
-      <child link="table"/>
+      <child link="table_front"/>
+    </joint>
+  </xacro:if>
+
+  <xacro:if value="$(arg table_right_side)">
+    <xacro:include filename="$(find birl_baxter_description)/urdf/table/table_right_side.xacro">
+    </xacro:include>
+    <joint name="table_fixed_2" type="fixed">
+      <origin rpy="0 0 -1.57" xyz="0.0 -0.2 -0.93"/>
+      <parent link="base"/>
+      <child link="table_right_side"/>
     </joint>
   </xacro:if>
 

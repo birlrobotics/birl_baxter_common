@@ -3,12 +3,18 @@
   <xacro:arg name="gazebo" default="false"/>
   <xacro:arg name="left_ft_sensor" default="true"/>
   <xacro:arg name="right_ft_sensor" default="true"/>
- <!-- <xacro:property name="pi" value="3.1415926"/>-->
+  <xacro:property name="pi" value="3.1415926"/>
+
+  <!--<xacro:if value="$(arg gazebo)">-->
+    <!-- Gazebo Tags -->
+    <!--<xacro:include filename="$(find birl_baxter_description)/urdf/baxter_element/baxter_base/baxter_base_pa.gazebo.xacro" />-->
+  <!--</xacro:if>-->
 
   <xacro:if value="$(arg gazebo)">
     <!-- Gazebo Tags -->
-    <xacro:include filename="$(find birl_baxter_description)/urdf/baxter_element/baxter_base/baxter_base_pa.gazebo.xacro" />
+    <xacro:include filename="$(find baxter_description)/urdf/baxter_base/baxter_base.gazebo.xacro" />
   </xacro:if>
+
   <link name="base">
   </link>
   <link name="torso">
